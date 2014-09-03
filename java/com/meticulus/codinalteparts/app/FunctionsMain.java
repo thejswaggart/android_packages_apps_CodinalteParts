@@ -94,7 +94,7 @@ public class FunctionsMain {
     {
         Boolean retval = false;
         try{
-            String btpanip = CommandUtility.ExecuteShellCommand(CMD_BTPAN_IP, false);;
+            String btpanip = CommandUtility.ExecuteShellCommand(CMD_BTPAN_IP, true);;
             if(btpanip.equals("0.0.0.0"))
             {
                 Log.i(TAG, "Found bt-pan ip " + btpanip);

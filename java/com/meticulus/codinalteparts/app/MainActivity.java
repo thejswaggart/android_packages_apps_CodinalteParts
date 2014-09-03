@@ -80,11 +80,11 @@ public class MainActivity extends Activity {
 
     private void prepareUI(){
 
-        clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze",true));
-        incallaudio.setChecked(sharedPref.getBoolean("incallaudio",true));
-        bttether.setChecked(sharedPref.getBoolean("bttether",true));
+        clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled)));
+        incallaudio.setChecked(sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled)));
+        bttether.setChecked(sharedPref.getBoolean("bttether",getResources().getBoolean(R.bool.bttether_default_enabled)));
         cpu2.setChecked(sharedPref.getBoolean("cpu2", true));
-        LMKNKP.setChecked(sharedPref.getBoolean("LMKNKP", true));
+        LMKNKP.setChecked(sharedPref.getBoolean("LMKNKP", getResources().getBoolean(R.bool.LMKNKP_default_enabled)));
         autologcat.setChecked(sharedPref.getBoolean("autologcat",false));
         autokmsg.setChecked(sharedPref.getBoolean("autokmsg",false));
         autoril.setChecked(sharedPref.getBoolean("autoril",false));

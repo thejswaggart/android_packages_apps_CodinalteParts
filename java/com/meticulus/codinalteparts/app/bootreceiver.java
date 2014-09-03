@@ -19,12 +19,12 @@ public class bootreceiver extends BroadcastReceiver  {
     {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(arg0.getApplicationContext());
         //If incallaudio is selected that start service at boot.
-        if(sharedPref.getBoolean("incallaudio", true))
+        if(sharedPref.getBoolean("incallaudio", arg0.getResources().getBoolean(R.bool.incallaudio_default_enabled)))
         {
             FunctionsMain.startInCallAudioService(arg0.getApplicationContext());
         }
         //If clockfreeze is selected that start service at boot.
-        if(sharedPref.getBoolean("clockfreeze", true))
+        if(sharedPref.getBoolean("clockfreeze", arg0.getResources().getBoolean(R.bool.clockfreeze_default_enabled)))
         {
             FunctionsMain.startClockFreezeMonitorService(arg0.getApplicationContext());
         }
@@ -32,7 +32,7 @@ public class bootreceiver extends BroadcastReceiver  {
         //Setting it on if it's already on should make no difference.
         FunctionsMain.SetCPU2(sharedPref.getBoolean("cpu2",true));
 
-        if(sharedPref.getBoolean("LKMNKP", true))
+        if(sharedPref.getBoolean("LKMNKP", arg0.getResources().getBoolean(R.bool.LMKNKP_default_enabled)))
         {
             FunctionsMain.enableLMKNKP();
             FunctionsMain.setLMKNKPWhitelist();;
