@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/workarounds_header"
-                android:id="@+id/textView"
+                android:id="@+id/workarounds_texview"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 style="@android:style/TextAppearance.DialogWindowTitle"
@@ -38,7 +38,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout7">
+                android:id="@+id/clockfreeze_layout">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -70,7 +70,8 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:id="@+id/incallaudio_layout">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -104,7 +105,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout">
+                android:id="@+id/bttether_layout">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -137,7 +138,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
-                android:textSize="10dp" />
+                android:textSize="10dp"
+                android:id="@+id/performance_textview" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -146,7 +148,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout2" >
+                android:id="@+id/CPU2_layout" >
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -177,7 +179,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout6" >
+                android:id="@+id/LMKNKP_layout" >
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -206,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/debugging_header"
-                android:id="@+id/textView2"
+                android:id="@+id/debugging_textview"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:paddingBottom="20dp"
@@ -220,7 +222,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout3" >
+                android:id="@+id/autologcat_layout" >
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -250,7 +252,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout4" >
+                android:id="@+id/autokmsg_layout" >
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -280,7 +282,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/linearLayout5" >
+                android:id="@+id/autoril_layout" >
 
                 <Switch
                     android:layout_width="wrap_content"
