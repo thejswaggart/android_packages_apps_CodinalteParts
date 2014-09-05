@@ -6,11 +6,13 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,7 +76,47 @@ public class MainActivity extends Activity {
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
+        TextView workarounds = (TextView) findViewById(R.id.workarounds_texview);
+
+        LinearLayout clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
+
+        LinearLayout incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
+
+        LinearLayout bttether_layout = (LinearLayout) findViewById(R.id.bttether_layout);
+
+        TextView performance = (TextView) findViewById(R.id.performance_textview);
+
+        LinearLayout cpu2_layout = (LinearLayout) findViewById(R.id.CPU2_layout);
+
+        LinearLayout LMKNKP_layout = (LinearLayout) findViewById(R.id.LMKNKP_layout);
+
         prepareUI();
+
+        String device =  "";
+        try {
+            device = CommandUtility.ExecuteShellCommand("/system/bin/getprop ro.build.product", true).replace("\n","");
+            Log.i("Codinalte Parts", "Device = '" + device + "'" );
+        }
+        catch(Exception ex){ex.printStackTrace();}
+
+        if(device.equals("m470") || device.equals("YP-G70")){
+
+            if(device.equals("m470"))
+                workarounds.setVisibility(View.GONE);
+
+            clockfreeze_layout.setVisibility(View.GONE);
+
+            incallaudio_layout.setVisibility(View.GONE);
+
+            if(device.equals("m470"))
+                bttether_layout.setVisibility(View.GONE);
+
+            performance.setVisibility(View.GONE);
+
+            cpu2_layout.setVisibility(View.GONE);
+
+            LMKNKP_layout.setVisibility(View.GONE);
+        }
 
     }
 
