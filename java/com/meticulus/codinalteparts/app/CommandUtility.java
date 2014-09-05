@@ -39,7 +39,7 @@ public class CommandUtility {
     {
         Process p;
                 if(useroot)
-                    p = Runtime.getRuntime().exec(new String[]{"su", "-c", "/system/bin/sh"});
+                    p = Runtime.getRuntime().exec(new String[]{"su"});
                 else
                     p = Runtime.getRuntime().exec(new String[]{"/system/bin/sh" ,"-c"});
 
@@ -55,7 +55,7 @@ public class CommandUtility {
         while(true){
             read = stdout.read(buffer);
             baos.write(buffer, 0, read);
-            if(read<BUFF_LEN){
+            if(read < BUFF_LEN){
                 //we have read everything
                 break;
             }
