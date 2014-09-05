@@ -25,11 +25,11 @@ public class FunctionsMain {
 
     private static final String CMD_BTPAN_DHCP = "netcfg bt-pan dhcp";
 
-    private static final String CMD_DNS1 = "echo \"nameserver 8.8.8.8\" > /system/etc/resolv.conf";
+    private static final String CMD_DNS1 = "echo \"nameserver 8.8.8.8\" > /tmp/resolv.conf";
 
-    private static final String CMD_DNS2 = "echo \"nameserver 8.8.4.4\" >> /system/etc/resolv.conf";
+    private static final String CMD_DNS2 = "echo \"nameserver 8.8.4.4\" >> /tmp/resolv.conf";
 
-    private static final String CMD_DNSMASQ = "dnsmasq -x /data/dnsmasq.pid";
+    private static final String CMD_DNSMASQ = "dnsmasq -x /tmp/dnsmasq.pid -r /tmp/resolve.conf";
 
     /* Logging Vars */
     private static final String CMD_KMSG = "cat /proc/kmsg | while read LINE;do " + "" +
@@ -94,7 +94,7 @@ public class FunctionsMain {
     {
         Boolean retval = false;
         try{
-            String btpanip = CommandUtility.ExecuteShellCommand(CMD_BTPAN_IP, true);;
+            String btpanip = CommandUtility.ExecuteShellCommand(CMD_BTPAN_IP, true).replace("\n","");
             if(btpanip.equals("0.0.0.0"))
             {
                 Log.i(TAG, "Found bt-pan ip " + btpanip);
