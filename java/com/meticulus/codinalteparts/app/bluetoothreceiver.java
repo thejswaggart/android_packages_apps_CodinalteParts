@@ -16,7 +16,7 @@ public class bluetoothreceiver extends BroadcastReceiver {
     {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(arg0.getApplicationContext());
 
-        if(!sharedPref.getBoolean("incallaudio", arg0.getResources().getBoolean(R.bool.bttether_default_enabled)))
+        if(!sharedPref.getBoolean("bttether", arg0.getResources().getBoolean(R.bool.bttether_default_enabled)))
             return;
 
         if(arg1.getAction().equals("android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED") )

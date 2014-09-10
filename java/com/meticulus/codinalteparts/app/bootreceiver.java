@@ -28,6 +28,11 @@ public class bootreceiver extends BroadcastReceiver  {
         {
             FunctionsMain.startClockFreezeMonitorService(arg0.getApplicationContext());
         }
+        //If sweep2wake is selected that start service at boot.
+        if(sharedPref.getBoolean("sweep2wake", arg0.getResources().getBoolean(R.bool.clockfreeze_default_enabled)))
+        {
+            FunctionsMain.setSweep2Wake(true);
+        }
         //Set cpu2 on or off
         //Setting it on if it's already on should make no difference.
         FunctionsMain.SetCPU2(sharedPref.getBoolean("cpu2",true));

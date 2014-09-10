@@ -21,8 +21,8 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    Switch clockfreeze, incallaudio, bttether, cpu2, LMKNKP, autologcat, autokmsg, autoril;
-    ImageView whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_cpu2, whatis_LMKNKP,
+    Switch sweep2wake, clockfreeze, incallaudio, bttether, cpu2, LMKNKP, autologcat, autokmsg, autoril;
+    ImageView whatis_sweep2wake, whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_cpu2, whatis_LMKNKP,
             whatis_autologcat,whatis_autokmsg, whatis_autorillog;
 
     SharedPreferences sharedPref;
@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.xml.activity_main);
         /* Assign all switches */
+        sweep2wake = (Switch) findViewById((R.id.switch_sweep2wake));
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
         incallaudio = (Switch) findViewById(R.id.switch_incallaudio);
         bttether = (Switch) findViewById(R.id.switch_bttether);
@@ -41,6 +42,7 @@ public class MainActivity extends Activity {
         autokmsg = (Switch) findViewById(R.id.switch_autokmsg);
         autoril = (Switch)findViewById(R.id.switch_autorillog);
         /* Assign all switches onCheckChanged*/
+        sweep2wake.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
         incallaudio.setOnCheckedChangeListener(switchListener);
         bttether.setOnCheckedChangeListener(switchListener);
@@ -49,6 +51,9 @@ public class MainActivity extends Activity {
         autologcat.setOnCheckedChangeListener(switchListener);
         autokmsg.setOnCheckedChangeListener(switchListener);
         autoril.setOnCheckedChangeListener(switchListener);
+
+        whatis_sweep2wake = (ImageView) findViewById(R.id.whatis_sweep2wake);
+        whatis_sweep2wake.setOnClickListener(switchClickListener);
 
         whatis_clockfreeze = (ImageView) findViewById(R.id.whatis_clockfreeze);
         whatis_clockfreeze.setOnClickListener(switchClickListener);
@@ -76,6 +81,10 @@ public class MainActivity extends Activity {
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
+        TextView kernel = (TextView) findViewById(R.id.kernel_textview);
+
+        LinearLayout sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
+
         TextView workarounds = (TextView) findViewById(R.id.workarounds_texview);
 
         LinearLayout clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
@@ -99,29 +108,42 @@ public class MainActivity extends Activity {
         }
         catch(Exception ex){ex.printStackTrace();}
 
-        if(device.equals("m470") || device.equals("YP-G70")){
-
-            if(device.equals("m470"))
-                workarounds.setVisibility(View.GONE);
+        if(device.equals("YP-G70")){
 
             clockfreeze_layout.setVisibility(View.GONE);
-
             incallaudio_layout.setVisibility(View.GONE);
 
-            if(device.equals("m470"))
-                bttether_layout.setVisibility(View.GONE);
+            performance.setVisibility(View.GONE);
+            cpu2_layout.setVisibility(View.GONE);
+            LMKNKP_layout.setVisibility(View.GONE);
+        }
+        else if(device.equals("m470")){
+
+            kernel.setVisibility(View.GONE);
+            sweep2wake_layout.setVisibility(View.GONE);
+
+            workarounds.setVisibility(View.GONE);
+            bttether_layout.setVisibility(View.GONE);
+            clockfreeze_layout.setVisibility(View.GONE);
+            incallaudio_layout.setVisibility(View.GONE);
 
             performance.setVisibility(View.GONE);
-
             cpu2_layout.setVisibility(View.GONE);
-
             LMKNKP_layout.setVisibility(View.GONE);
+
+
+        }
+        else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
+
+            kernel.setVisibility(View.GONE);
+            sweep2wake_layout.setVisibility(View.GONE);
         }
 
     }
 
     private void prepareUI(){
 
+        sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
         clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled)));
         incallaudio.setChecked(sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled)));
         bttether.setChecked(sharedPref.getBoolean("bttether",getResources().getBoolean(R.bool.bttether_default_enabled)));
@@ -137,7 +159,10 @@ public class MainActivity extends Activity {
         public void onClick(View view) {
 
             ImageView thisSwitch = (ImageView)view;
-            if(thisSwitch == whatis_clockfreeze){
+            if(thisSwitch == whatis_sweep2wake){
+                ShowDialog("Sweep2wake",getString(R.string.sweep2wake_desc));
+            }
+            else if(thisSwitch == whatis_clockfreeze){
                 ShowDialog("Clock Freeze",getString(R.string.clockfreeze_desc));
             }
             else if(thisSwitch == whatis_incallaudio){
@@ -171,9 +196,14 @@ public class MainActivity extends Activity {
 
             Switch thisSwitch = (Switch)compoundButton;
             SharedPreferences.Editor editor = sharedPref.edit();
+             if(thisSwitch == sweep2wake){
 
-             if(thisSwitch == clockfreeze){
-                if(b != sharedPref.getBoolean("clockfreeze",true)) {
+                FunctionsMain.setSweep2Wake(b);
+                editor.putBoolean("sweep2wake", b);
+
+             }
+             else if(thisSwitch == clockfreeze){
+                if(b != sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled))) {
                     if (b)
                         FunctionsMain.startClockFreezeMonitorService(getApplicationContext());
                     else
@@ -184,7 +214,7 @@ public class MainActivity extends Activity {
 
             }
             else if(thisSwitch == incallaudio){
-                if(b != sharedPref.getBoolean("incallaudio",true)) {
+                if(b != sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled))) {
                     if (b)
                         FunctionsMain.startInCallAudioService(getApplicationContext());
                     else
