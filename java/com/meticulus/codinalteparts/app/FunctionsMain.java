@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 
+import java.io.File;
+
 /**
  * Created by meticulus on 4/7/14.
  */
@@ -48,11 +50,17 @@ public class FunctionsMain {
 
     private static final String CMD_BTPAN_DHCP = "netcfg bt-pan dhcp";
 
-    private static final String CMD_DNS1 = "echo \"nameserver 8.8.8.8\" > /data/local/tmp/resolv.conf";
+    private static final String BTPAN_DNSMASQ_RESOLV_FILE = "/data/local/tmp/resolv.conf";
 
-    private static final String CMD_DNS2 = "echo \"nameserver 8.8.4.4\" >> /data/local/tmp/resolv.conf";
+    private static final String CMD_DNS1 = "echo \"nameserver 8.8.8.8\" > " + BTPAN_DNSMASQ_RESOLV_FILE;
 
-    private static final String CMD_DNSMASQ = "dnsmasq -x /data/local/tmp/dnsmasq.pid -r /data/local/tmp/resolv.conf";
+    private static final String CMD_DNS2 = "echo \"nameserver 8.8.4.4\" >> " + BTPAN_DNSMASQ_RESOLV_FILE;
+
+    private static final String BTPAN_DNSMASQ_PID_FILE = "/data/local/tmp/dnsmasq.pid";
+
+    private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " + BTPAN_DNSMASQ_RESOLV_FILE;
+
+    private static final String CMD_KILL_DNSMASQ = "kill + $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
 
     /* Logging Vars */
     private static final String CMD_KMSG = "cat /proc/kmsg | while read LINE;do " + "" +
@@ -84,6 +92,10 @@ public class FunctionsMain {
 
     public static void setSweep2Wake(boolean enabled){
         try {
+            // Don't do this if the file doesn't exist!
+            if(!new File(S2W_ENABLE_PATH).exists())
+                return;
+
             if (enabled) {
                 Log.i(TAG,"Enabling Sweep2wake");
                 CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, true);
@@ -175,6 +187,17 @@ public class FunctionsMain {
             CommandUtility.ExecuteNoReturn(CMD_DNS2, true);
             Log.i(TAG, "Running dnsmasq...");
             CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true);
+        }
+        catch(Exception e){e.printStackTrace();}
+    }
+
+    public static void killBTDNSMasq(){
+
+        try{
+            if(new File(BTPAN_DNSMASQ_PID_FILE).exists()) {
+                CommandUtility.ExecuteNoReturn(CMD_KILL_DNSMASQ, true);
+                Log.i(TAG, "Killing dnsmasq...");
+            }
         }
         catch(Exception e){e.printStackTrace();}
     }

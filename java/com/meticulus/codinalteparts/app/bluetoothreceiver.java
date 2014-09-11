@@ -30,6 +30,9 @@ public class bluetoothreceiver extends BroadcastReceiver {
                     FunctionsMain.runBTDNSMasq();
                 }
             }
+            else {
+                FunctionsMain.killBTDNSMasq();
+            }
         }
     }
 }
