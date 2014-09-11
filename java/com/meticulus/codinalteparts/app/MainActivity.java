@@ -119,9 +119,6 @@ public class MainActivity extends Activity {
         }
         else if(device.equals("m470")){
 
-            kernel.setVisibility(View.GONE);
-            sweep2wake_layout.setVisibility(View.GONE);
-
             workarounds.setVisibility(View.GONE);
             bttether_layout.setVisibility(View.GONE);
             clockfreeze_layout.setVisibility(View.GONE);
