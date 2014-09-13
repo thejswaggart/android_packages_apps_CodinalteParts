@@ -21,9 +21,22 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    Switch sweep2wake, clockfreeze, incallaudio, bttether, cpu2, LMKNKP, autologcat, autokmsg, autoril;
-    ImageView whatis_sweep2wake, whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_cpu2, whatis_LMKNKP,
-            whatis_autologcat,whatis_autokmsg, whatis_autorillog;
+    TextView kernel,workarounds,performance,debugging; /* Headers */
+
+    Switch sweep2wake, bln, blnblink, /* Kernel */
+            clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
+            cpu2, LMKNKP, /* Performance */
+            autologcat, autokmsg, autoril; /* Debugging */
+
+    ImageView whatis_sweep2wake, whatis_bln, whatis_blnblink, /* Kernel */
+            whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
+            whatis_cpu2, whatis_LMKNKP, /* Performance */
+            whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
+
+    LinearLayout sweep2wake_layout, bln_layout, blnblink_layout, /* Kernel */
+            clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
+            cpu2_layout, LMKNKP_layout, /* Performance */
+            autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
 
     SharedPreferences sharedPref;
 
@@ -31,21 +44,35 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.xml.activity_main);
+
+        /* Headers */
+        kernel = (TextView) findViewById(R.id.kernel_textview);
+        workarounds = (TextView) findViewById(R.id.workarounds_texview);
+        performance = (TextView) findViewById(R.id.performance_textview);
+        debugging = (TextView) findViewById(R.id.debugging_textview);
+
         /* Assign all switches */
         sweep2wake = (Switch) findViewById((R.id.switch_sweep2wake));
+        bln = (Switch) findViewById((R.id.switch_bln));
+        blnblink = (Switch) findViewById((R.id.switch_blnblink));
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
         incallaudio = (Switch) findViewById(R.id.switch_incallaudio);
         bttether = (Switch) findViewById(R.id.switch_bttether);
+        h264softdec = (Switch) findViewById(R.id.switch_h264softdec);
         cpu2 = (Switch) findViewById(R.id.switch_cpu2);
         LMKNKP = (Switch) findViewById(R.id.switch_LMKNKP);
         autologcat = (Switch) findViewById(R.id.switch_autologcat);
         autokmsg = (Switch) findViewById(R.id.switch_autokmsg);
         autoril = (Switch)findViewById(R.id.switch_autorillog);
+
         /* Assign all switches onCheckChanged*/
         sweep2wake.setOnCheckedChangeListener(switchListener);
+        bln.setOnCheckedChangeListener(switchListener);
+        blnblink.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
         incallaudio.setOnCheckedChangeListener(switchListener);
         bttether.setOnCheckedChangeListener(switchListener);
+        h264softdec.setOnCheckedChangeListener(switchListener);
         cpu2.setOnCheckedChangeListener(switchListener);
         LMKNKP.setOnCheckedChangeListener(switchListener);
         autologcat.setOnCheckedChangeListener(switchListener);
@@ -55,6 +82,12 @@ public class MainActivity extends Activity {
         whatis_sweep2wake = (ImageView) findViewById(R.id.whatis_sweep2wake);
         whatis_sweep2wake.setOnClickListener(switchClickListener);
 
+        whatis_bln = (ImageView) findViewById(R.id.whatis_bln);
+        whatis_bln.setOnClickListener(switchClickListener);
+
+        whatis_blnblink = (ImageView) findViewById(R.id.whatis_blnblink);
+        whatis_blnblink.setOnClickListener(switchClickListener);
+
         whatis_clockfreeze = (ImageView) findViewById(R.id.whatis_clockfreeze);
         whatis_clockfreeze.setOnClickListener(switchClickListener);
 
@@ -63,6 +96,9 @@ public class MainActivity extends Activity {
 
         whatis_bttether = (ImageView) findViewById(R.id.whatis_bttether);
         whatis_bttether.setOnClickListener(switchClickListener);
+
+        whatis_h264softdec = (ImageView) findViewById(R.id.whatis_h264softdec);
+        whatis_h264softdec.setOnClickListener(switchClickListener);
 
         whatis_cpu2 = (ImageView) findViewById(R.id.whatis_cpu2);
         whatis_cpu2.setOnClickListener(switchClickListener);
@@ -81,23 +117,15 @@ public class MainActivity extends Activity {
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-        TextView kernel = (TextView) findViewById(R.id.kernel_textview);
-
-        LinearLayout sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
-
-        TextView workarounds = (TextView) findViewById(R.id.workarounds_texview);
-
-        LinearLayout clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
-
-        LinearLayout incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
-
-        LinearLayout bttether_layout = (LinearLayout) findViewById(R.id.bttether_layout);
-
-        TextView performance = (TextView) findViewById(R.id.performance_textview);
-
-        LinearLayout cpu2_layout = (LinearLayout) findViewById(R.id.CPU2_layout);
-
-        LinearLayout LMKNKP_layout = (LinearLayout) findViewById(R.id.LMKNKP_layout);
+        sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
+        bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
+        blnblink_layout = (LinearLayout) findViewById(R.id.blnblink_layout);
+        clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
+        incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
+        bttether_layout = (LinearLayout) findViewById(R.id.bttether_layout);
+        h264softdec_layout = (LinearLayout) findViewById(R.id.h264softdec_layout);
+        cpu2_layout = (LinearLayout) findViewById(R.id.CPU2_layout);
+        LMKNKP_layout = (LinearLayout) findViewById(R.id.LMKNKP_layout);
 
         prepareUI();
 
@@ -112,6 +140,7 @@ public class MainActivity extends Activity {
 
             clockfreeze_layout.setVisibility(View.GONE);
             incallaudio_layout.setVisibility(View.GONE);
+            h264softdec_layout.setVisibility(View.GONE);
 
             performance.setVisibility(View.GONE);
             cpu2_layout.setVisibility(View.GONE);
@@ -119,8 +148,12 @@ public class MainActivity extends Activity {
         }
         else if(device.equals("m470")){
 
+            bln_layout.setVisibility(View.GONE);
+            blnblink_layout.setVisibility(View.GONE);
+
             workarounds.setVisibility(View.GONE);
             bttether_layout.setVisibility(View.GONE);
+            h264softdec_layout.setVisibility(View.GONE);
             clockfreeze_layout.setVisibility(View.GONE);
             incallaudio_layout.setVisibility(View.GONE);
 
@@ -130,20 +163,23 @@ public class MainActivity extends Activity {
 
 
         }
-        else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
+        //else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
 
-            kernel.setVisibility(View.GONE);
-            sweep2wake_layout.setVisibility(View.GONE);
-        }
+        //    kernel.setVisibility(View.GONE);
+        //    sweep2wake_layout.setVisibility(View.GONE);
+        //}
 
     }
 
     private void prepareUI(){
 
         sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
+        bln.setChecked(sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled)));
+        blnblink.setChecked(sharedPref.getBoolean("blnblink", getResources().getBoolean(R.bool.blnblink_default_enabled)));
         clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled)));
         incallaudio.setChecked(sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled)));
         bttether.setChecked(sharedPref.getBoolean("bttether",getResources().getBoolean(R.bool.bttether_default_enabled)));
+        h264softdec.setChecked(sharedPref.getBoolean("h264softdec",getResources().getBoolean(R.bool.h264softdec_default_enabled)));
         cpu2.setChecked(sharedPref.getBoolean("cpu2", true));
         LMKNKP.setChecked(sharedPref.getBoolean("LMKNKP", getResources().getBoolean(R.bool.LMKNKP_default_enabled)));
         autologcat.setChecked(sharedPref.getBoolean("autologcat",false));
@@ -159,6 +195,12 @@ public class MainActivity extends Activity {
             if(thisSwitch == whatis_sweep2wake){
                 ShowDialog("Sweep2wake",getString(R.string.sweep2wake_desc));
             }
+            else if(thisSwitch == whatis_bln){
+                ShowDialog("Backlight Notification",getString(R.string.bln_desc));
+            }
+            else if(thisSwitch == whatis_blnblink){
+                ShowDialog("Blinking Backlight Notification",getString(R.string.blnblink_desc));
+            }
             else if(thisSwitch == whatis_clockfreeze){
                 ShowDialog("Clock Freeze",getString(R.string.clockfreeze_desc));
             }
@@ -168,6 +210,9 @@ public class MainActivity extends Activity {
 
             else if(thisSwitch == whatis_bttether){
                 ShowDialog("Bluetooth Tether",getString(R.string.bttether_desc));
+            }
+            else if(thisSwitch == whatis_h264softdec){
+                ShowDialog("H.264 Software Decoder",getString(R.string.h264softdec_desc));
             }
             else if(thisSwitch == whatis_cpu2){
                 ShowDialog("CPU2",getString(R.string.cpu2_desc));
@@ -193,13 +238,26 @@ public class MainActivity extends Activity {
 
             Switch thisSwitch = (Switch)compoundButton;
             SharedPreferences.Editor editor = sharedPref.edit();
-             if(thisSwitch == sweep2wake){
+            if(thisSwitch == sweep2wake){
 
                 FunctionsMain.setSweep2Wake(b);
                 editor.putBoolean("sweep2wake", b);
 
-             }
-             else if(thisSwitch == clockfreeze){
+            }
+            else if(thisSwitch == bln){
+
+                FunctionsMain.setBLN(b);
+                editor.putBoolean("bln",b);
+                blnblink.setEnabled(b);
+
+            }
+            else if(thisSwitch == blnblink){
+
+                FunctionsMain.setBLNBlink(b);
+                editor.putBoolean("blnblink",b);
+
+            }
+            else if(thisSwitch == clockfreeze){
                 if(b != sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled))) {
                     if (b)
                         FunctionsMain.startClockFreezeMonitorService(getApplicationContext());
@@ -223,6 +281,10 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == bttether){
                 editor.putBoolean("bttether", b);
+            }
+            else if(thisSwitch == h264softdec){
+                editor.putBoolean("h264softdec", b);
+                FunctionsMain.setH264SoftDec(b);
             }
             else if(thisSwitch == cpu2){
                 editor.putBoolean("cpu2", b);

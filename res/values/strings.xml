@@ -3,24 +3,31 @@
 
     <string name="app_name">Codinalte Parts</string>
     <string name="kernel_header">KERNEL</string>
-    <string name="swee2wake_title">Sweep2Wake</string>
+    <string name="sweep2wake_title">Sweep2Wake</string>
+    <string name="bln_title">BLN\n(Backlight-Notify)</string>
+    <string name="blnblink_title">BLN: Blink!</string>
     <string name="workarounds_header">WORKAROUNDS</string>
     <string name="clockfreeze_title">Clock Freeze Monitor</string>
     <string name="incallaudio_title">In-Call Audio</string>
     <string name="bttether_title">Bluetooth Tether</string>
+    <string name="h264softdec_title">H.264 SoftDec</string>
     <string name="CPU2_title">CPU2</string>
     <string name="LMKNKP_title">Low Memory Killer\nNot Killable Procs</string>
     <string name="autologcat_title">Auto logcat</string>
     <string name="autokmsg_title">Auto kmsg</string>
     <string name="autoril_title">Auto RIL log</string>
-    <string name="enablebln_title">Enable BLN</string>
     <string name="performance_header">PERFORMANCE</string>
-    <string name="bln_header">BACKLIGHT NOTIFICATION</string>
     <string name="debugging_header">DEBUGGING</string>
     <string name="action_settings">Settings</string>
     <string name="sweep2wake_desc">Allows you to swipe the screen, left to right,
     to wake up the device. Note: does not work in deep sleep unless a wakelock is
     used.
+    </string>
+    <string name="bln_desc">When you receive a notification and the screen is off the
+        back-light on your capacitive buttons will illuminate. The button back-light will
+        return to normal behavior after you wake the device.
+    </string>
+    <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.
     </string>
     <string name="clockfreeze_desc">If the status bar clock get stuck enable this.
     WARNING: Do not depend on this to fix the alarm clock. NOTE: Experimental for now.
@@ -32,6 +39,11 @@
     <string name="bttether_desc">The BT Tether workaround detects when your connected to
     a Tethering "server" and runs dhcp on the bt-pan interface and also runs dnsmasq
     for you automatically; effectively fixing bluetooth tethering.</string>
+    <string name="h264softdec_desc">This option forces the use of the Google software decoder
+    for H.264 video. This fixes issues in the latest release of the official Youtube app. However
+    the switch is system wide and the Google software decoder does not work well when watching
+    HD video such as video captured from the camera app.\n\nBasically: Enable to fix Youtube. Disable
+    for HD video.</string>
     <string name="cpu2_desc">I am not sure what benefits this has but this allows you
     to disable the secondary cpu. It is possible that this may save battery life.
     Note: I have noticed that disabling it sometimes causes the min and max scaling

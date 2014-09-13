@@ -36,6 +36,21 @@ public class FunctionsMain {
 
     private static final String S2W_GET_WAKELOCK_CMD = "cat " + S2W_WAKELOCK_PATH;
 
+    /* BLN */
+    private static final String BLN_PATH = "/sys/devices/virtual/misc/backlightnotification";
+
+    private static final String BLN_ENABLE_PATH = BLN_PATH + "/enabled";
+
+    private static final String BLN_BLINKMODE_PATH = BLN_PATH + "/blink_mode";
+
+    private static final String CMD_BLN_ENABLE = "echo 1 > " + BLN_ENABLE_PATH;
+
+    private static final String CMD_BLN_DISABLE = "echo 0 > " + BLN_ENABLE_PATH;
+
+    private static final String CMD_BLNBLINK_ENABLE = "echo 1 > " + BLN_BLINKMODE_PATH;
+
+    private static final String CMD_BLNBLINK_DISABLE = "echo 0 > " + BLN_BLINKMODE_PATH;
+
     /* CPU2 Commands */
     private static final String CPU2_ONLINE_PATH = "/sys/devices/system/cpu/cpu1/online";
 
@@ -61,6 +76,14 @@ public class FunctionsMain {
     private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " + BTPAN_DNSMASQ_RESOLV_FILE;
 
     private static final String CMD_KILL_DNSMASQ = "kill + $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
+
+    /* h264SoftDec */
+    private static final String H264SOFTDEC_PROP = "vu.co.meticulus.h264switch";
+
+    private static final String ENABLE_H264SOFTDEC = "/system/bin/setprop " + H264SOFTDEC_PROP +
+            " true";
+    private static final String DISABLE_H264SOFTDEC = "/system/bin/setprop " + H264SOFTDEC_PROP +
+            " false";
 
     /* Logging Vars */
     private static final String CMD_KMSG = "cat /proc/kmsg | while read LINE;do " + "" +
@@ -108,6 +131,34 @@ public class FunctionsMain {
                     true).replace("\n",""));
         } catch (Exception ex){ex.printStackTrace();}
 
+
+    }
+
+    public static void setBLN(boolean enabled){
+        try{
+            if(enabled){
+                Log.i(TAG,"Enabling BLN");
+                CommandUtility.ExecuteNoReturn(CMD_BLN_ENABLE,true);
+            } else {
+                Log.i(TAG,"Disabling BLN");
+                CommandUtility.ExecuteNoReturn(CMD_BLN_DISABLE, true);
+            }
+        }
+        catch(Exception ex){ex.printStackTrace();}
+
+    }
+
+    public static void setBLNBlink(boolean enabled){
+        try{
+            if(enabled){
+                Log.i(TAG,"Enabling BLN Blink");
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_ENABLE,true);
+            } else {
+                Log.i(TAG,"Disabling BLN Blink");
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_DISABLE, true);
+            }
+        }
+        catch(Exception ex){ex.printStackTrace();}
 
     }
 
@@ -200,6 +251,21 @@ public class FunctionsMain {
             }
         }
         catch(Exception e){e.printStackTrace();}
+    }
+
+    public static void setH264SoftDec(boolean on){
+
+        try{
+            if(on) {
+                CommandUtility.ExecuteNoReturn(ENABLE_H264SOFTDEC, true);
+                Log.i(TAG, "Enabled h264softdec");
+            }
+            else {
+                CommandUtility.ExecuteNoReturn(DISABLE_H264SOFTDEC, true);
+                Log.i(TAG, "Disabled h264softdec");
+            }
+        }
+        catch(Exception ex){ex.printStackTrace();}
     }
 
     public static void startAutokmsg()

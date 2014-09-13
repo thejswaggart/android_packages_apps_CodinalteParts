@@ -33,6 +33,21 @@ public class bootreceiver extends BroadcastReceiver  {
         {
             FunctionsMain.setSweep2Wake(true);
         }
+
+        if(sharedPref.getBoolean("h264softdec", arg0.getResources().getBoolean(R.bool.h264softdec_default_enabled)))
+        {
+            FunctionsMain.setH264SoftDec(true);
+        }
+
+        if(sharedPref.getBoolean("bln", arg0.getResources().getBoolean(R.bool.bln_default_enabled)))
+        {
+            FunctionsMain.setBLN(true);
+        }
+        if(sharedPref.getBoolean("blnblink", arg0.getResources().getBoolean(R.bool.blnblink_default_enabled)))
+        {
+            FunctionsMain.setBLNBlink(true);
+        }
+
         //Set cpu2 on or off
         //Setting it on if it's already on should make no difference.
         FunctionsMain.SetCPU2(sharedPref.getBoolean("cpu2",true));

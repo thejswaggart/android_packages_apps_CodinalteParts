@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <bool name="sweep2wake_default_enabled">false</bool>
+    <bool name="bln_default_enabled">false</bool>
+    <bool name="blnblink_default_enabled">false</bool>
     <bool name="clockfreeze_default_enabled">false</bool>
     <bool name="incallaudio_default_enabled">false</bool>
     <bool name="bttether_default_enabled">false</bool>
+    <bool name="h264softdec_default_enabled">false</bool>
     <bool name="LMKNKP_default_enabled">false</bool>
 </resources>
