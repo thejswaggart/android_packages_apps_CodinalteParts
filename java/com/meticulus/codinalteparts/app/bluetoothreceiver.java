@@ -1,5 +1,6 @@
 package com.meticulus.codinalteparts.app;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +34,11 @@ public class bluetoothreceiver extends BroadcastReceiver {
             else {
                 FunctionsMain.killBTDNSMasq();
             }
+        }
+        else if(arg1.getAction().equals("android.bluetooth.adapter.action.STATE_CHANGED"))
+        {
+            if(arg1.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1) == BluetoothAdapter.STATE_OFF)
+                FunctionsMain.killBTDNSMasq();
         }
     }
 }
