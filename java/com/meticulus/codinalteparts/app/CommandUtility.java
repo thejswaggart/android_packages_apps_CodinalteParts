@@ -1,5 +1,7 @@
 package com.meticulus.codinalteparts.app;
 
+import android.util.Log;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -10,48 +12,61 @@ import java.io.InputStream;
  */
 public class CommandUtility {
 
+    static String TAG = "Command Utility";
     static int BUFF_LEN = 1024 * 100;
 
     public static void ExecuteNoReturn(String command, Boolean useroot) throws Exception {
-        Process process;
-                if(useroot)
-                    process = Runtime.getRuntime().exec(new String[]{"su"});
-                else
-                    process = Runtime.getRuntime().exec(new String[]{"/system/bin/sh" ,"-c"});
-        DataOutputStream os = new DataOutputStream(process.getOutputStream());
+        Process p;
+        DataOutputStream os;
+
+        if(useroot)
+            p = Runtime.getRuntime().exec(new String[]{"su"});
+        else
+            p = Runtime.getRuntime().exec(new String[]{"sh"});
+
+        os = new DataOutputStream(p.getOutputStream());
 
         os.writeBytes(command+"\n");
         os.writeBytes("exit\n");
         os.flush();
         os.close();
 
-        process.waitFor();
+        p.waitFor();
     }
 
     public static Process ExecuteReturnProcess(String command) throws Exception {
-        Process process = Runtime.getRuntime().exec("su");
-        DataOutputStream os = new DataOutputStream(process.getOutputStream());
+        Process p = Runtime.getRuntime().exec("su");
+        DataOutputStream os = new DataOutputStream(p.getOutputStream());
         os.writeBytes(command + "\n");
-        return process;
+        return p;
     }
 
-    public static byte[] ExecuteCommand(String command, Boolean useroot) throws IOException
+    private static byte[] ExecuteCommand(String command, Boolean useroot) throws IOException
     {
         Process p;
-                if(useroot)
-                    p = Runtime.getRuntime().exec(new String[]{"su"});
-                else
-                    p = Runtime.getRuntime().exec(new String[]{"/system/bin/sh" ,"-c"});
-
-        DataOutputStream stdin = new DataOutputStream(p.getOutputStream());
-        //from here all commands are executed with su permissions
-        stdin.writeBytes(command + "\n"); // \n executes the command
-        InputStream stdout = p.getInputStream();
-        byte[] buffer = new byte[BUFF_LEN];
+        DataOutputStream stdin;
+        InputStream stdout;
+        ByteArrayOutputStream baos;
         int read;
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        //read method will wait forever if there is nothing in the stream
-        //so we need to read it in another way than while((read=stdout.read(buffer))>0)
+        byte[] buffer;
+        /*
+         * If for any reason the command does not print anything we are stuck forever.
+         * Make sure that we print SOMETHING ALWAYS!
+         */
+        command = "RESULT=$(" + command + "); if [[ $RESULT == '' ]]; then echo '#null#';else echo $RESULT;fi\n";
+
+        if(useroot)
+            p = Runtime.getRuntime().exec(new String[]{"su"});
+        else
+            p = Runtime.getRuntime().exec(new String[]{"sh"});
+
+        stdin = new DataOutputStream(p.getOutputStream());
+        stdout = p.getInputStream();
+        buffer = new byte[BUFF_LEN];
+        baos = new ByteArrayOutputStream();
+
+        stdin.writeBytes(command);
+
         while(true){
             read = stdout.read(buffer);
             baos.write(buffer, 0, read);
@@ -65,6 +80,17 @@ public class CommandUtility {
     public static String ExecuteShellCommand(String command, Boolean useroot) throws IOException
     {
         byte[] bytes = ExecuteCommand(command, useroot);
-        return new String(bytes);
+        String tmp = new String(bytes);
+        if(tmp.equals("#null#\n"))
+            tmp = "";
+        return tmp;
+    }
+    public static String ExecuteShellCommandTrimmed(String command, Boolean useroot) throws IOException
+    {
+        /* This function is just here to trim off the last '\n' */
+        String tmp = ExecuteShellCommand(command, useroot);
+        if(tmp.length() > 0)
+            tmp = tmp.substring(0,tmp.length() -1);
+        return tmp;
     }
 }
