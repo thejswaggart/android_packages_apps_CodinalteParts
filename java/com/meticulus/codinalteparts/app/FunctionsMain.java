@@ -59,11 +59,13 @@ public class FunctionsMain {
     private static final String CPU2_DISABLE_COMMAND = "echo 0 >" + CPU2_ONLINE_PATH;
 
     /* Bluetooth Commands */
-    private static final String CMD_BTPAN_IP = "RESULT=$(netcfg | grep bt-pan | awk -F '/' " +
-            "'{print $1}' | awk -F ' ' '{print $ 3}'); if [[ \"$RESULT\" == \"\" ]]; " +
-            "then echo \"not found\";else echo $RESULT;fi";
 
     private static final String CMD_BTPAN_DHCP = "netcfg bt-pan dhcp";
+
+    private static final String BTPAN_IFACE_NAME = "bt-pan";
+
+    private static final String CMD_BTPAN_IP = "netcfg | grep " +BTPAN_IFACE_NAME +" | awk -F '/' " +
+            "'{print $1}' | awk -F ' ' '{print $ 3}'";
 
     private static final String BTPAN_DNSMASQ_RESOLV_FILE = "/data/local/tmp/resolv.conf";
 
@@ -73,7 +75,8 @@ public class FunctionsMain {
 
     private static final String BTPAN_DNSMASQ_PID_FILE = "/data/local/tmp/dnsmasq.pid";
 
-    private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " + BTPAN_DNSMASQ_RESOLV_FILE;
+    private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " +
+            BTPAN_DNSMASQ_RESOLV_FILE;
 
     private static final String CMD_KILL_DNSMASQ = "kill + $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
 
@@ -127,8 +130,8 @@ public class FunctionsMain {
                 CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, true);
             }
 
-            Log.i(TAG,"Sweep2Wake status: " + CommandUtility.ExecuteShellCommand(S2W_GET_ENABLE_CMD,
-                    true).replace("\n",""));
+            Log.i(TAG,"Sweep2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(S2W_GET_ENABLE_CMD,
+                    true));
         } catch (Exception ex){ex.printStackTrace();}
 
 
@@ -198,7 +201,7 @@ public class FunctionsMain {
     {
         Boolean retval = false;
         try{
-            String btpanip = CommandUtility.ExecuteShellCommand(CMD_BTPAN_IP, true).replace("\n","");
+            String btpanip = CommandUtility.ExecuteShellCommandTrimmed(CMD_BTPAN_IP, true);
             if(btpanip.equals("0.0.0.0"))
             {
                 Log.i(TAG, "Found bt-pan ip " + btpanip);

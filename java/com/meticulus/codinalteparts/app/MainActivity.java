@@ -131,7 +131,7 @@ public class MainActivity extends Activity {
 
         String device =  "";
         try {
-            device = CommandUtility.ExecuteShellCommand("/system/bin/getprop ro.build.product", true).replace("\n","");
+            device = CommandUtility.ExecuteShellCommandTrimmed("getprop ro.build.product", true);
             Log.i("Codinalte Parts", "Device = '" + device + "'" );
         }
         catch(Exception ex){ex.printStackTrace();}
