@@ -21,19 +21,22 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    TextView kernel,workarounds,performance,debugging; /* Headers */
+    TextView kernel,networking,workarounds,performance,debugging; /* Headers */
 
     Switch sweep2wake, bln, blnblink, /* Kernel */
+            googledns, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_sweep2wake, whatis_bln, whatis_blnblink, /* Kernel */
+            whatis_googledns, /* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout sweep2wake_layout, bln_layout, blnblink_layout, /* Kernel */
+            googledns_layout, /* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
@@ -47,6 +50,7 @@ public class MainActivity extends Activity {
 
         /* Headers */
         kernel = (TextView) findViewById(R.id.kernel_textview);
+        networking = (TextView) findViewById(R.id.network_textview);
         workarounds = (TextView) findViewById(R.id.workarounds_texview);
         performance = (TextView) findViewById(R.id.performance_textview);
         debugging = (TextView) findViewById(R.id.debugging_textview);
@@ -55,6 +59,7 @@ public class MainActivity extends Activity {
         sweep2wake = (Switch) findViewById((R.id.switch_sweep2wake));
         bln = (Switch) findViewById((R.id.switch_bln));
         blnblink = (Switch) findViewById((R.id.switch_blnblink));
+        googledns = (Switch) findViewById(R.id.switch_googledns);
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
         incallaudio = (Switch) findViewById(R.id.switch_incallaudio);
         bttether = (Switch) findViewById(R.id.switch_bttether);
@@ -69,6 +74,7 @@ public class MainActivity extends Activity {
         sweep2wake.setOnCheckedChangeListener(switchListener);
         bln.setOnCheckedChangeListener(switchListener);
         blnblink.setOnCheckedChangeListener(switchListener);
+        googledns.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
         incallaudio.setOnCheckedChangeListener(switchListener);
         bttether.setOnCheckedChangeListener(switchListener);
@@ -87,6 +93,9 @@ public class MainActivity extends Activity {
 
         whatis_blnblink = (ImageView) findViewById(R.id.whatis_blnblink);
         whatis_blnblink.setOnClickListener(switchClickListener);
+
+        whatis_googledns = (ImageView) findViewById(R.id.whatis_googledns);
+        whatis_googledns.setOnClickListener(switchClickListener);
 
         whatis_clockfreeze = (ImageView) findViewById(R.id.whatis_clockfreeze);
         whatis_clockfreeze.setOnClickListener(switchClickListener);
@@ -120,6 +129,7 @@ public class MainActivity extends Activity {
         sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
         bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
         blnblink_layout = (LinearLayout) findViewById(R.id.blnblink_layout);
+        googledns_layout = (LinearLayout) findViewById(R.id.googledns_layout);
         clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
         incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
         bttether_layout = (LinearLayout) findViewById(R.id.bttether_layout);
@@ -176,6 +186,7 @@ public class MainActivity extends Activity {
         sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
         bln.setChecked(sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled)));
         blnblink.setChecked(sharedPref.getBoolean("blnblink", getResources().getBoolean(R.bool.blnblink_default_enabled)));
+        googledns.setChecked(sharedPref.getBoolean("googledns", getResources().getBoolean(R.bool.googledns_default_enabled)));
         clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled)));
         incallaudio.setChecked(sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled)));
         bttether.setChecked(sharedPref.getBoolean("bttether",getResources().getBoolean(R.bool.bttether_default_enabled)));
@@ -200,6 +211,9 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == whatis_blnblink){
                 ShowDialog("Blinking Backlight Notification",getString(R.string.blnblink_desc));
+            }
+            else if(thisSwitch == whatis_googledns){
+                ShowDialog("Google DNS",getString(R.string.googledns_desc));
             }
             else if(thisSwitch == whatis_clockfreeze){
                 ShowDialog("Clock Freeze",getString(R.string.clockfreeze_desc));
@@ -255,6 +269,12 @@ public class MainActivity extends Activity {
 
                 FunctionsMain.setBLNBlink(b);
                 editor.putBoolean("blnblink",b);
+
+            }
+            else if(thisSwitch == googledns){
+
+                FunctionsMain.setGoogleDNS(getApplicationContext(),b);
+                editor.putBoolean("googledns",b);
 
             }
             else if(thisSwitch == clockfreeze){

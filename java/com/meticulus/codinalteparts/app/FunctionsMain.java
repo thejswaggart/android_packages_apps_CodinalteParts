@@ -2,6 +2,8 @@ package com.meticulus.codinalteparts.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.util.Log;
 
@@ -165,6 +167,30 @@ public class FunctionsMain {
 
     }
 
+    public static void setGoogleDNS(Context c,boolean enabled){
+        ConnectivityManager connManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+        if (mWifi.isConnected() && enabled) {
+            runBTDNSMasq();
+        }
+        else{
+            killBTDNSMasq();;
+        }
+
+    }
+
+    private static boolean isdnsmasqRunning(){
+        boolean retval = false;
+        String pid = "";
+        try{
+            pid = CommandUtility.ExecuteShellCommandTrimmed("ps | grep dnsmasq | awk -F' ' '{print $2}'",false);
+        }
+        catch(Exception ex){ex.printStackTrace();}
+
+        return !pid.equals("");
+    }
+
     public static void startInCallAudioService(Context context)
     {
         Log.i(TAG,"Starting In Call Audio Service.");
@@ -230,12 +256,16 @@ public class FunctionsMain {
     {
         try
         {
+
+            if(isdnsmasqRunning()){
+                killBTDNSMasq();
+            }
             /*
             Try to make sure that the temporary dir exists first.
              */
             CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true);
             /*
-            TCreate resolv.conf file.
+            Create resolv.conf file.
              */
             CommandUtility.ExecuteNoReturn(CMD_DNS1,true);
             CommandUtility.ExecuteNoReturn(CMD_DNS2, true);

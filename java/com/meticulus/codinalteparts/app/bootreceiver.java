@@ -48,6 +48,11 @@ public class bootreceiver extends BroadcastReceiver  {
             FunctionsMain.setBLNBlink(true);
         }
 
+        if(sharedPref.getBoolean("googledns", arg0.getResources().getBoolean(R.bool.googledns_default_enabled)))
+        {
+            FunctionsMain.setGoogleDNS(arg0,true);
+        }
+
         //Set cpu2 on or off
         //Setting it on if it's already on should make no difference.
         FunctionsMain.SetCPU2(sharedPref.getBoolean("cpu2",true));

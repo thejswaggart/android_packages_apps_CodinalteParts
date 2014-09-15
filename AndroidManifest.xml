@@ -31,6 +31,12 @@
         <receiver android:name="com.meticulus.codinalteparts.app.bluetoothreceiver" >
             <intent-filter>
                 <action android:name="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED" />
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.meticulus.codinalteparts.app.wifireceiver" >
+            <intent-filter>
+                <action android:name="android.net.wifi.STATE_CHANGE" />
             </intent-filter>
         </receiver>
 

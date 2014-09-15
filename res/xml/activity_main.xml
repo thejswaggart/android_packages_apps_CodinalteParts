@@ -132,6 +132,52 @@
             </LinearLayout>
 
             <TextView
+                style="@android:style/TextAppearance.DialogWindowTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/network_header"
+                android:id="@+id/network_textview"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:background="@android:drawable/dialog_holo_dark_frame" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:weightSum="1"
+                android:id="@+id/googledns_layout" >
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/googledns_title"
+                    android:id="@+id/switch_googledns"
+                    android:paddingBottom="20dp"
+                    android:checked="true"
+                    android:enabled="true"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:focusableInTouchMode="false"
+                    android:layout_weight="0.99"
+                    android:paddingTop="20dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/whatis_googledns"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"
+                    android:baselineAlignBottom="false" />
+            </LinearLayout>
+
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
