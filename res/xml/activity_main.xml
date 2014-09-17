@@ -10,7 +10,8 @@
         android:layout_height="fill_parent"
         android:id="@+id/scrollView"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        style="@android:style/Holo.Light.SegmentedButton">
 
         <LinearLayout
             android:orientation="vertical"
@@ -20,7 +21,7 @@
             android:layout_alignParentStart="true">
 
             <TextView
-                style="@android:style/TextAppearance.DialogWindowTitle"
+                style="@android:style/TextAppearance.DeviceDefault.WindowTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -29,8 +30,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
-                android:textSize="20dp"
-                android:background="@android:drawable/dialog_holo_dark_frame" />
+                android:textSize="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -39,7 +41,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/sweep2wake_layout" >
+                android:id="@+id/sweep2wake_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -53,7 +57,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -72,7 +78,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/bln_layout" >
+                android:id="@+id/bln_layout"
+                android:background="#444444"
+                android:layout_margin="10dp">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -86,7 +94,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:typeface="monospace"
+                    android:textSize="12dp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -105,7 +115,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/blnblink_layout" >
+                android:id="@+id/blnblink_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -119,7 +131,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -141,8 +155,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
-                android:textSize="20dp"
-                android:background="@android:drawable/dialog_holo_dark_frame" />
+                android:textSize="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -151,7 +166,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/googledns_layout" >
+                android:id="@+id/googledns_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -165,7 +182,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -187,8 +206,9 @@
                 android:layout_alignParentStart="true"
                 style="@android:style/TextAppearance.DialogWindowTitle"
                 android:textStyle="bold"
-                android:textSize="20dp"
-                android:background="@android:drawable/dialog_holo_dark_frame" />
+                android:textSize="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -197,7 +217,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/clockfreeze_layout">
+                android:id="@+id/clockfreeze_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -211,7 +233,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -230,7 +254,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/incallaudio_layout">
+                android:id="@+id/incallaudio_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -244,7 +270,9 @@
                     android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -264,7 +292,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/bttether_layout">
+                android:id="@+id/bttether_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -275,9 +305,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -295,7 +328,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/h264softdec_layout" >
+                android:id="@+id/h264softdec_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -306,9 +341,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -328,9 +366,10 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:id="@+id/performance_textview"
-                android:background="@android:drawable/dialog_holo_dark_frame" />
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -339,7 +378,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/CPU2_layout" >
+                android:id="@+id/CPU2_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -350,9 +391,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -370,7 +414,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/LMKNKP_layout" >
+                android:id="@+id/LMKNKP_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -381,9 +427,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -402,10 +451,10 @@
                 android:id="@+id/debugging_textview"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-                android:paddingBottom="20dp"
-                android:textSize="20dp"
+                android:textSize="10dp"
                 android:textStyle="bold"
-                android:background="@android:drawable/dialog_holo_dark_frame" />
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -414,7 +463,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/autologcat_layout" >
+                android:id="@+id/autologcat_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -425,9 +476,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -444,7 +498,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/autokmsg_layout" >
+                android:id="@+id/autokmsg_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -455,9 +511,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -474,7 +533,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:weightSum="1"
-                android:id="@+id/autoril_layout" >
+                android:id="@+id/autoril_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
                 <Switch
                     android:layout_width="wrap_content"
@@ -485,9 +546,12 @@
                     android:checked="true"
                     android:enabled="true"
                     android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
-                    android:paddingTop="20dp" />
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:typeface="monospace" />
 
                 <ImageView
                     android:layout_width="wrap_content"

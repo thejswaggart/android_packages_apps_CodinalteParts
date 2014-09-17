@@ -4,14 +4,14 @@
     <string name="app_name">Codinalte Parts</string>
     <string name="kernel_header">KERNEL</string>
     <string name="sweep2wake_title">Sweep2Wake</string>
-    <string name="bln_title">BLN\n(Backlight-Notify)</string>
+    <string name="bln_title">BLN</string>
     <string name="blnblink_title">BLN: Blink!</string>
     <string name="network_header">NETWORKING</string>
     <string name="googledns_title">Google DNS</string>
     <string name="workarounds_header">WORKAROUNDS</string>
     <string name="clockfreeze_title">Clock Freeze Monitor</string>
     <string name="incallaudio_title">In-Call Audio</string>
-    <string name="bttether_title">Bluetooth Tether</string>
+    <string name="bttether_title">BT Tether</string>
     <string name="h264softdec_title">H.264 SoftDec</string>
     <string name="CPU2_title">CPU2</string>
     <string name="LMKNKP_title">Low Memory Killer\nNot Killable Procs</string>
@@ -23,20 +23,16 @@
     <string name="action_settings">Settings</string>
     <string name="sweep2wake_desc">Allows you to swipe the screen, left to right,
     to wake up the device. Note: does not work in deep sleep unless a wakelock is
-    used.
-    </string>
+    used.</string>
     <string name="bln_desc">When you receive a notification and the screen is off the
         back-light on your capacitive buttons will illuminate. The button back-light will
-        return to normal behavior after you wake the device.
-    </string>
-    <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.
-    </string>
+        return to normal behavior after you wake the device.</string>
+    <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.</string>
     <string name="googledns_desc">Uses dnsmasq to force the use of Google\'s DNS servers
-        instead of whatever is assigned by DHCP. Only known to work with Wifi.
-    </string>
+        instead of whatever is assigned by DHCP. Only known to work with Wifi.\n\nNOTE: Disable this
+        if this device is used as a tethering "server"!</string>
     <string name="clockfreeze_desc">If the status bar clock get stuck enable this.
-    WARNING: Do not depend on this to fix the alarm clock. NOTE: Experimental for now.
-    </string>
+    WARNING: Do not depend on this to fix the alarm clock. NOTE: Experimental for now.</string>
     <string name="incallaudio_desc">The In-Call Audio Service runs in the background
     and when you are on a call. It resets the volume to workaround the low-in-call volume
     problem. It also detects if you switch to speaker phone and resets the volume for that
@@ -65,5 +61,7 @@
     <string name="autorillog_desc">Auto ril log enables automatic dumping of the Radio log
     to a file in the root of the sdcard. Does not clean up after itself. Should
     probably keep this off unless I ask you to turn it on.</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
