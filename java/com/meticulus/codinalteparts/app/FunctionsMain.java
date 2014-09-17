@@ -143,10 +143,10 @@ public class FunctionsMain {
         try{
             if(enabled){
                 Log.i(TAG,"Enabling BLN");
-                CommandUtility.ExecuteNoReturn(CMD_BLN_ENABLE,true);
+                CommandUtility.ExecuteNoReturn(CMD_BLN_ENABLE,false);
             } else {
                 Log.i(TAG,"Disabling BLN");
-                CommandUtility.ExecuteNoReturn(CMD_BLN_DISABLE, true);
+                CommandUtility.ExecuteNoReturn(CMD_BLN_DISABLE, false);
             }
         }
         catch(Exception ex){ex.printStackTrace();}
@@ -157,10 +157,10 @@ public class FunctionsMain {
         try{
             if(enabled){
                 Log.i(TAG,"Enabling BLN Blink");
-                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_ENABLE,true);
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_ENABLE,false);
             } else {
                 Log.i(TAG,"Disabling BLN Blink");
-                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_DISABLE, true);
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_DISABLE, false);
             }
         }
         catch(Exception ex){ex.printStackTrace();}
@@ -227,7 +227,7 @@ public class FunctionsMain {
     {
         Boolean retval = false;
         try{
-            String btpanip = CommandUtility.ExecuteShellCommandTrimmed(CMD_BTPAN_IP, true);
+            String btpanip = CommandUtility.ExecuteShellCommandTrimmed(CMD_BTPAN_IP, false);
             if(btpanip.equals("0.0.0.0"))
             {
                 Log.i(TAG, "Found bt-pan ip " + btpanip);
@@ -247,7 +247,7 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false);
             CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, true);
         }
         catch (Exception e){e.printStackTrace();}
@@ -263,12 +263,12 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false);
             /*
             Create resolv.conf file.
              */
-            CommandUtility.ExecuteNoReturn(CMD_DNS1,true);
-            CommandUtility.ExecuteNoReturn(CMD_DNS2, true);
+            CommandUtility.ExecuteNoReturn(CMD_DNS1,false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS2, false);
             Log.i(TAG, "Running dnsmasq...");
             CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true);
         }
@@ -334,7 +334,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Enabling Not Killable Processes...");
-            CommandUtility.ExecuteNoReturn(LMKNKP_ENABLE_SYSPROCS,true);
+            CommandUtility.ExecuteNoReturn(LMKNKP_ENABLE_SYSPROCS,false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -343,7 +343,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Disabling Not Killable Processes...");
-            CommandUtility.ExecuteNoReturn(LMKNKP_DISABLE_SYSPROCS,true);
+            CommandUtility.ExecuteNoReturn(LMKNKP_DISABLE_SYSPROCS,false);
         }
         catch(Exception e){e.printStackTrace();}
     }
