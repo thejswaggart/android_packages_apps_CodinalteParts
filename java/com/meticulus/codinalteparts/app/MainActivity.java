@@ -23,19 +23,19 @@ public class MainActivity extends Activity {
 
     TextView kernel,networking,workarounds,performance,debugging; /* Headers */
 
-    Switch sweep2wake, bln, blnblink, /* Kernel */
+    Switch sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
             googledns, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
             autologcat, autokmsg, autoril; /* Debugging */
 
-    ImageView whatis_sweep2wake, whatis_bln, whatis_blnblink, /* Kernel */
+    ImageView whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
             whatis_googledns, /* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
-    LinearLayout sweep2wake_layout, bln_layout, blnblink_layout, /* Kernel */
+    LinearLayout sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
             googledns_layout, /* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
 
         /* Assign all switches */
         sweep2wake = (Switch) findViewById((R.id.switch_sweep2wake));
+        doubletap2wake = (Switch) findViewById((R.id.switch_doubletap2wake));
         bln = (Switch) findViewById((R.id.switch_bln));
         blnblink = (Switch) findViewById((R.id.switch_blnblink));
         googledns = (Switch) findViewById(R.id.switch_googledns);
@@ -72,6 +73,7 @@ public class MainActivity extends Activity {
 
         /* Assign all switches onCheckChanged*/
         sweep2wake.setOnCheckedChangeListener(switchListener);
+        doubletap2wake.setOnCheckedChangeListener(switchListener);
         bln.setOnCheckedChangeListener(switchListener);
         blnblink.setOnCheckedChangeListener(switchListener);
         googledns.setOnCheckedChangeListener(switchListener);
@@ -84,6 +86,9 @@ public class MainActivity extends Activity {
         autologcat.setOnCheckedChangeListener(switchListener);
         autokmsg.setOnCheckedChangeListener(switchListener);
         autoril.setOnCheckedChangeListener(switchListener);
+
+        whatis_doubletap2wake = (ImageView) findViewById(R.id.whatis_doubletap2wake);
+        whatis_doubletap2wake.setOnClickListener(switchClickListener);
 
         whatis_sweep2wake = (ImageView) findViewById(R.id.whatis_sweep2wake);
         whatis_sweep2wake.setOnClickListener(switchClickListener);
@@ -127,6 +132,7 @@ public class MainActivity extends Activity {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
         sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
+        doubletap2wake_layout = (LinearLayout) findViewById(R.id.doubletap2wake_layout);
         bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
         blnblink_layout = (LinearLayout) findViewById(R.id.blnblink_layout);
         googledns_layout = (LinearLayout) findViewById(R.id.googledns_layout);
@@ -183,6 +189,7 @@ public class MainActivity extends Activity {
 
     private void prepareUI(){
 
+        doubletap2wake.setChecked(sharedPref.getBoolean("doubletap2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled)));
         sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
         bln.setChecked(sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled)));
         blnblink.setChecked(sharedPref.getBoolean("blnblink", getResources().getBoolean(R.bool.blnblink_default_enabled)));
@@ -203,7 +210,10 @@ public class MainActivity extends Activity {
         public void onClick(View view) {
 
             ImageView thisSwitch = (ImageView)view;
-            if(thisSwitch == whatis_sweep2wake){
+            if(thisSwitch == whatis_doubletap2wake){
+                ShowDialog("DoubleTap2wake",getString(R.string.doubletap2wake_desc));
+            }
+            else if(thisSwitch == whatis_sweep2wake){
                 ShowDialog("Sweep2wake",getString(R.string.sweep2wake_desc));
             }
             else if(thisSwitch == whatis_bln){
@@ -252,29 +262,40 @@ public class MainActivity extends Activity {
 
             Switch thisSwitch = (Switch)compoundButton;
             SharedPreferences.Editor editor = sharedPref.edit();
-            if(thisSwitch == sweep2wake){
+            if(thisSwitch == doubletap2wake){
+                if(b != sharedPref.getBoolean("doubletap2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled))) {
+                    FunctionsMain.setDoubleTap2Wake(b);
+                    editor.putBoolean("doubletap2wake", b);
+                }
 
-                FunctionsMain.setSweep2Wake(b);
-                editor.putBoolean("sweep2wake", b);
+            }
+            else if(thisSwitch == sweep2wake){
+                if(b != sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled))) {
+                    FunctionsMain.setSweep2Wake(b);
+                    editor.putBoolean("sweep2wake", b);
+                }
 
             }
             else if(thisSwitch == bln){
-
-                FunctionsMain.setBLN(b);
-                editor.putBoolean("bln",b);
+                if(b != sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled))) {
+                    FunctionsMain.setBLN(b);
+                    editor.putBoolean("bln", b);
+                }
                 blnblink.setEnabled(b);
 
             }
             else if(thisSwitch == blnblink){
-
-                FunctionsMain.setBLNBlink(b);
-                editor.putBoolean("blnblink",b);
+                if(b != sharedPref.getBoolean("blnblink", getResources().getBoolean(R.bool.blnblink_default_enabled))) {
+                    FunctionsMain.setBLNBlink(b);
+                    editor.putBoolean("blnblink", b);
+                }
 
             }
             else if(thisSwitch == googledns){
-
-                FunctionsMain.setGoogleDNS(getApplicationContext(),b);
-                editor.putBoolean("googledns",b);
+                if(b != sharedPref.getBoolean("googledns", getResources().getBoolean(R.bool.googledns_default_enabled))) {
+                    FunctionsMain.setGoogleDNS(getApplicationContext(), b);
+                    editor.putBoolean("googledns", b);
+                }
 
             }
             else if(thisSwitch == clockfreeze){

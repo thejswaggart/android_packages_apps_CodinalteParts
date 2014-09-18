@@ -19,6 +19,25 @@ public class FunctionsMain {
     /* General */
     private static final String TEMP_DIR_CMD = "mkdir -p /data/local/tmp";
 
+    /* DoubleTap2wake */
+    private static final String DT2W_PATH = "/sys/module/doubletap2wake/parameters";
+
+    private static final String DT2W_ENABLE_PATH = DT2W_PATH + "/enable";
+
+    private static final String DT2W_WAKELOCK_PATH = DT2W_PATH + "/use_wakelock";
+
+    private static final String DT2W_ENABLE_CMD = "echo 1 > " + DT2W_ENABLE_PATH;
+
+    private static final String DT2W_DISABLE_CMD = "echo 0 > " + DT2W_ENABLE_PATH;
+
+    private static final String DT2W_GET_ENABLE_CMD = "cat " + DT2W_ENABLE_PATH;
+
+    private static final String DT2W_ENABLE_WAKELOCK_CMD = "echo 1 > " + DT2W_WAKELOCK_PATH;
+
+    private static final String DT2W_DISABLE_WAKELOCK_CMD = "echo 0 > " + DT2W_WAKELOCK_PATH;
+
+    private static final String DT2W_GET_WAKELOCK_CMD = "cat " + DT2W_WAKELOCK_PATH;
+
     /* Sweep2wake */
     private static final String S2W_PATH = "/sys/module/sweep2wake/parameters";
 
@@ -125,18 +144,35 @@ public class FunctionsMain {
                 return;
 
             if (enabled) {
-                Log.i(TAG,"Enabling Sweep2wake");
+                Log.i(TAG,"Enabling Sweep2Wake");
                 CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, true);
             }else {
-                Log.i(TAG,"Disabling Sweep2wake");
+                Log.i(TAG,"Disabling Sweep2Wake");
                 CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, true);
             }
 
             Log.i(TAG,"Sweep2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(S2W_GET_ENABLE_CMD,
                     true));
         } catch (Exception ex){ex.printStackTrace();}
+    }
 
+    public static void setDoubleTap2Wake(boolean enabled){
+        try {
+            // Don't do this if the file doesn't exist!
+            if(!new File(DT2W_ENABLE_PATH).exists())
+                return;
 
+            if (enabled) {
+                Log.i(TAG,"Enabling DoubleTap2Wake");
+                CommandUtility.ExecuteNoReturn(DT2W_ENABLE_CMD, true);
+            }else {
+                Log.i(TAG,"Disabling DoubleTap2Wake");
+                CommandUtility.ExecuteNoReturn(DT2W_DISABLE_CMD, true);
+            }
+
+            Log.i(TAG,"DoubleTap2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(DT2W_GET_ENABLE_CMD,
+                    true));
+        } catch (Exception ex){ex.printStackTrace();}
     }
 
     public static void setBLN(boolean enabled){

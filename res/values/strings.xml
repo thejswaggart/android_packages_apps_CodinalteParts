@@ -4,6 +4,7 @@
     <string name="app_name">Codinalte Parts</string>
     <string name="kernel_header">KERNEL</string>
     <string name="sweep2wake_title">Sweep2Wake</string>
+    <string name="doubletap2wake_title">DoubleTap2Wake</string>
     <string name="bln_title">BLN</string>
     <string name="blnblink_title">BLN: Blink!</string>
     <string name="network_header">NETWORKING</string>
@@ -24,6 +25,8 @@
     <string name="sweep2wake_desc">Allows you to swipe the screen, left to right,
     to wake up the device. Note: does not work in deep sleep unless a wakelock is
     used.</string>
+    <string name="doubletap2wake_desc">Allows you to double tap on the screen to wake up the device.
+    Note: does not work in deep sleep unless a wakelock is used.</string>
     <string name="bln_desc">When you receive a notification and the screen is off the
         back-light on your capacitive buttons will illuminate. The button back-light will
         return to normal behavior after you wake the device.</string>

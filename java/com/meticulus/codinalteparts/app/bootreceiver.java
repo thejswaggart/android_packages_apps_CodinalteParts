@@ -28,8 +28,13 @@ public class bootreceiver extends BroadcastReceiver  {
         {
             FunctionsMain.startClockFreezeMonitorService(arg0.getApplicationContext());
         }
+        //If doubletap2wake is selected that start service at boot.
+        if(sharedPref.getBoolean("doubletap2wake", arg0.getResources().getBoolean(R.bool.doubletap2wake_default_enabled)))
+        {
+            FunctionsMain.setDoubleTap2Wake(true);
+        }
         //If sweep2wake is selected that start service at boot.
-        if(sharedPref.getBoolean("sweep2wake", arg0.getResources().getBoolean(R.bool.clockfreeze_default_enabled)))
+        if(sharedPref.getBoolean("sweep2wake", arg0.getResources().getBoolean(R.bool.sweep2wake_default_enabled)))
         {
             FunctionsMain.setSweep2Wake(true);
         }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <bool name="doubletap2wake_default_enabled">false</bool>
     <bool name="sweep2wake_default_enabled">false</bool>
     <bool name="bln_default_enabled">false</bool>
     <bool name="blnblink_default_enabled">false</bool>
