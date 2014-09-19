@@ -13,35 +13,55 @@ import java.io.InputStream;
 public class CommandUtility {
 
     static String TAG = "Command Utility";
-    static int BUFF_LEN = 1024 * 100;
+    private static int BUFF_LEN = 1024 * 100;
+    private static Process sh = null;
+    private static Process su = null;
 
-    public static void ExecuteNoReturn(String command, Boolean useroot) throws Exception {
+    public static void ExecuteNoReturn(String command, Boolean useroot, boolean forcenew) throws Exception {
+
         Process p;
         DataOutputStream os;
 
-        if(useroot)
-            p = Runtime.getRuntime().exec(new String[]{"su"});
-        else
-            p = Runtime.getRuntime().exec(new String[]{"sh"});
+        p = getProcess(useroot,forcenew);
 
         os = new DataOutputStream(p.getOutputStream());
 
         os.writeBytes(command+"\n");
-        os.writeBytes("exit\n");
-        os.flush();
-        os.close();
 
-        p.waitFor();
+        if(forcenew) {
+            os.writeBytes("exit\n");
+            os.flush();
+            os.close();
+        }
+
+        //p.waitFor();
     }
 
-    public static Process ExecuteReturnProcess(String command) throws Exception {
-        Process p = Runtime.getRuntime().exec("su");
-        DataOutputStream os = new DataOutputStream(p.getOutputStream());
-        os.writeBytes(command + "\n");
-        return p;
+    private static Process getProcess(boolean useroot, boolean forcenew)throws Exception{
+
+        if(forcenew && useroot)
+            return Runtime.getRuntime().exec(new String[]{"su"});
+        else if(forcenew && !useroot)
+            return Runtime.getRuntime().exec(new String[]{"sh"});
+        else if(useroot && su !=null)
+            return su;
+        else if(useroot && su == null) {
+                su = Runtime.getRuntime().exec(new String[]{"su"});
+                return su;
+            }
+        else if(!useroot && sh != null)
+            return sh;
+        else if(!useroot && sh == null) {
+                sh = Runtime.getRuntime().exec(new String[]{"sh"});
+                return sh;
+            }
+
+        /* Shouldn't ever actually get here! */
+        return Runtime.getRuntime().exec(new String[]{"sh"});
+
     }
 
-    private static byte[] ExecuteCommand(String command, Boolean useroot) throws IOException
+    private static byte[] ExecuteCommand(String command, Boolean useroot, boolean forcenew) throws Exception
     {
         Process p;
         DataOutputStream stdin;
@@ -55,10 +75,7 @@ public class CommandUtility {
          */
         command = "RESULT=$(" + command + "); if [[ $RESULT == '' ]]; then echo '#null#';else echo $RESULT;fi\n";
 
-        if(useroot)
-            p = Runtime.getRuntime().exec(new String[]{"su"});
-        else
-            p = Runtime.getRuntime().exec(new String[]{"sh"});
+        p = getProcess(useroot, forcenew);
 
         stdin = new DataOutputStream(p.getOutputStream());
         stdout = p.getInputStream();
@@ -75,22 +92,31 @@ public class CommandUtility {
                 break;
             }
         }
+        if(forcenew) {
+            stdin.writeBytes("exit\n");
+            stdin.flush();
+            stdin.close();
+        }
+
+        //p.waitFor();
+
         return baos.toByteArray();
     }
-    public static String ExecuteShellCommand(String command, Boolean useroot) throws IOException
+    public static String ExecuteShellCommand(String command, Boolean useroot,boolean forcenew) throws Exception
     {
-        byte[] bytes = ExecuteCommand(command, useroot);
+        byte[] bytes = ExecuteCommand(command, useroot, forcenew);
         String tmp = new String(bytes);
         if(tmp.equals("#null#\n"))
             tmp = "";
         return tmp;
     }
-    public static String ExecuteShellCommandTrimmed(String command, Boolean useroot) throws IOException
+    public static String ExecuteShellCommandTrimmed(String command, Boolean useroot, boolean forcenew) throws Exception
     {
         /* This function is just here to trim off the last '\n' */
-        String tmp = ExecuteShellCommand(command, useroot);
+        String tmp = ExecuteShellCommand(command, useroot, forcenew);
         if(tmp.length() > 0)
             tmp = tmp.substring(0,tmp.length() -1);
         return tmp;
     }
+
 }

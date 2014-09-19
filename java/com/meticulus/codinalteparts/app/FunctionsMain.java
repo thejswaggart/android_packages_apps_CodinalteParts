@@ -62,6 +62,8 @@ public class FunctionsMain {
 
     private static final String BLN_ENABLE_PATH = BLN_PATH + "/enabled";
 
+    private static final String BLN_GET_ENABLE_CMD = "cat " + BLN_ENABLE_PATH;
+
     private static final String BLN_BLINKMODE_PATH = BLN_PATH + "/blink_mode";
 
     private static final String CMD_BLN_ENABLE = "echo 1 > " + BLN_ENABLE_PATH;
@@ -71,6 +73,8 @@ public class FunctionsMain {
     private static final String CMD_BLNBLINK_ENABLE = "echo 1 > " + BLN_BLINKMODE_PATH;
 
     private static final String CMD_BLNBLINK_DISABLE = "echo 0 > " + BLN_BLINKMODE_PATH;
+
+    private static final String CMD_GET_BLNBLINK_ENABLE = "cat " + BLN_BLINKMODE_PATH;
 
     /* CPU2 Commands */
     private static final String CPU2_ONLINE_PATH = "/sys/devices/system/cpu/cpu1/online";
@@ -99,7 +103,7 @@ public class FunctionsMain {
     private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " +
             BTPAN_DNSMASQ_RESOLV_FILE;
 
-    private static final String CMD_KILL_DNSMASQ = "kill + $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
+    private static final String CMD_KILL_DNSMASQ = "kill $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
 
     /* h264SoftDec */
     private static final String H264SOFTDEC_PROP = "vu.co.meticulus.h264switch";
@@ -145,14 +149,14 @@ public class FunctionsMain {
 
             if (enabled) {
                 Log.i(TAG,"Enabling Sweep2Wake");
-                CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, true);
+                CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, true, false);
             }else {
                 Log.i(TAG,"Disabling Sweep2Wake");
-                CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, true);
+                CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, true, false);
             }
 
             Log.i(TAG,"Sweep2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(S2W_GET_ENABLE_CMD,
-                    true));
+                    false,false));
         } catch (Exception ex){ex.printStackTrace();}
     }
 
@@ -164,14 +168,14 @@ public class FunctionsMain {
 
             if (enabled) {
                 Log.i(TAG,"Enabling DoubleTap2Wake");
-                CommandUtility.ExecuteNoReturn(DT2W_ENABLE_CMD, true);
+                CommandUtility.ExecuteNoReturn(DT2W_ENABLE_CMD, true, false);
             }else {
                 Log.i(TAG,"Disabling DoubleTap2Wake");
-                CommandUtility.ExecuteNoReturn(DT2W_DISABLE_CMD, true);
+                CommandUtility.ExecuteNoReturn(DT2W_DISABLE_CMD, true, false);
             }
 
             Log.i(TAG,"DoubleTap2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(DT2W_GET_ENABLE_CMD,
-                    true));
+                    false, false));
         } catch (Exception ex){ex.printStackTrace();}
     }
 
@@ -179,11 +183,14 @@ public class FunctionsMain {
         try{
             if(enabled){
                 Log.i(TAG,"Enabling BLN");
-                CommandUtility.ExecuteNoReturn(CMD_BLN_ENABLE,false);
+                CommandUtility.ExecuteNoReturn(CMD_BLN_ENABLE,false, false);
             } else {
                 Log.i(TAG,"Disabling BLN");
-                CommandUtility.ExecuteNoReturn(CMD_BLN_DISABLE, false);
+                CommandUtility.ExecuteNoReturn(CMD_BLN_DISABLE, false, false);
             }
+
+            Log.i(TAG,"BLN status: " + CommandUtility.ExecuteShellCommandTrimmed(BLN_GET_ENABLE_CMD,
+                    false, false));
         }
         catch(Exception ex){ex.printStackTrace();}
 
@@ -193,11 +200,13 @@ public class FunctionsMain {
         try{
             if(enabled){
                 Log.i(TAG,"Enabling BLN Blink");
-                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_ENABLE,false);
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_ENABLE,false, false);
             } else {
                 Log.i(TAG,"Disabling BLN Blink");
-                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_DISABLE, false);
+                CommandUtility.ExecuteNoReturn(CMD_BLNBLINK_DISABLE, false, false);
             }
+            Log.i(TAG,"BLNBlink status: " + CommandUtility.ExecuteShellCommandTrimmed(CMD_GET_BLNBLINK_ENABLE,
+                    false,false));
         }
         catch(Exception ex){ex.printStackTrace();}
 
@@ -220,7 +229,7 @@ public class FunctionsMain {
         boolean retval = false;
         String pid = "";
         try{
-            pid = CommandUtility.ExecuteShellCommandTrimmed("ps | grep dnsmasq | awk -F' ' '{print $2}'",false);
+            pid = CommandUtility.ExecuteShellCommandTrimmed("ps | grep dnsmasq | awk -F' ' '{print $2}'",false, false);
         }
         catch(Exception ex){ex.printStackTrace();}
 
@@ -247,12 +256,12 @@ public class FunctionsMain {
             if(enabled)
             {
                 Log.i(TAG,"Enabling CPU2");
-                CommandUtility.ExecuteNoReturn(CPU2_ENABLE_COMMAND,true);
+                CommandUtility.ExecuteNoReturn(CPU2_ENABLE_COMMAND,true, false);
             }
             else
             {
                 Log.i(TAG,"Disabling CPU2");
-                CommandUtility.ExecuteNoReturn(CPU2_DISABLE_COMMAND, true);
+                CommandUtility.ExecuteNoReturn(CPU2_DISABLE_COMMAND, true, false);
             }
         }
         catch (Exception e){e.printStackTrace();}
@@ -263,7 +272,7 @@ public class FunctionsMain {
     {
         Boolean retval = false;
         try{
-            String btpanip = CommandUtility.ExecuteShellCommandTrimmed(CMD_BTPAN_IP, false);
+            String btpanip = CommandUtility.ExecuteShellCommandTrimmed(CMD_BTPAN_IP, false, false);
             if(btpanip.equals("0.0.0.0"))
             {
                 Log.i(TAG, "Found bt-pan ip " + btpanip);
@@ -283,8 +292,8 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false);
-            CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, true);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
+            CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, true, false);
         }
         catch (Exception e){e.printStackTrace();}
     } 
@@ -299,14 +308,14 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
             /*
             Create resolv.conf file.
              */
-            CommandUtility.ExecuteNoReturn(CMD_DNS1,false);
-            CommandUtility.ExecuteNoReturn(CMD_DNS2, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS1,false, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS2, false, false);
             Log.i(TAG, "Running dnsmasq...");
-            CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true);
+            CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true, true);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -315,7 +324,7 @@ public class FunctionsMain {
 
         try{
             if(new File(BTPAN_DNSMASQ_PID_FILE).exists()) {
-                CommandUtility.ExecuteNoReturn(CMD_KILL_DNSMASQ, true);
+                CommandUtility.ExecuteNoReturn(CMD_KILL_DNSMASQ, true, false);
                 Log.i(TAG, "Killing dnsmasq...");
             }
         }
@@ -326,11 +335,11 @@ public class FunctionsMain {
 
         try{
             if(on) {
-                CommandUtility.ExecuteNoReturn(ENABLE_H264SOFTDEC, true);
+                CommandUtility.ExecuteNoReturn(ENABLE_H264SOFTDEC, true, false);
                 Log.i(TAG, "Enabled h264softdec");
             }
             else {
-                CommandUtility.ExecuteNoReturn(DISABLE_H264SOFTDEC, true);
+                CommandUtility.ExecuteNoReturn(DISABLE_H264SOFTDEC, true, false);
                 Log.i(TAG, "Disabled h264softdec");
             }
         }
@@ -342,7 +351,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Running auto kmsg...");
-            CommandUtility.ExecuteNoReturn(CMD_KMSG,true);
+            CommandUtility.ExecuteNoReturn(CMD_KMSG,true, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -351,7 +360,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Running auto logcat...");
-            CommandUtility.ExecuteNoReturn(CMD_LOGCAT,true);
+            CommandUtility.ExecuteNoReturn(CMD_LOGCAT,true, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -360,7 +369,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Running auto ril log...");
-            CommandUtility.ExecuteNoReturn(CMD_RILLOG,true);
+            CommandUtility.ExecuteNoReturn(CMD_RILLOG,true, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -370,7 +379,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Enabling Not Killable Processes...");
-            CommandUtility.ExecuteNoReturn(LMKNKP_ENABLE_SYSPROCS,false);
+            CommandUtility.ExecuteNoReturn(LMKNKP_ENABLE_SYSPROCS,false, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -379,7 +388,7 @@ public class FunctionsMain {
         try
         {
             Log.i(TAG, "Disabling Not Killable Processes...");
-            CommandUtility.ExecuteNoReturn(LMKNKP_DISABLE_SYSPROCS,false);
+            CommandUtility.ExecuteNoReturn(LMKNKP_DISABLE_SYSPROCS,false, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -390,7 +399,7 @@ public class FunctionsMain {
         {
             Log.i(TAG, "Setting Not Killable Processes List...");
             CommandUtility.ExecuteNoReturn(LMKNKP_PROC_LIST_START + LMKNKP_PROC_LIST +
-                    LMKNKP_PROC_LIST_TAIL,true);
+                    LMKNKP_PROC_LIST_TAIL,true, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
