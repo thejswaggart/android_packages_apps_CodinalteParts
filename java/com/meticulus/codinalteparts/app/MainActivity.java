@@ -152,6 +152,9 @@ public class MainActivity extends Activity {
         }
         catch(Exception ex){ex.printStackTrace();}
 
+        /* disable for all, patches disabled */
+        clockfreeze_layout.setVisibility(View.GONE);
+
         if(device.equals("YP-G70")){
 
             clockfreeze_layout.setVisibility(View.GONE);
