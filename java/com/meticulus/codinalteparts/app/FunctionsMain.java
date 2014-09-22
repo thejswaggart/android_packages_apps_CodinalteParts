@@ -220,7 +220,7 @@ public class FunctionsMain {
             runBTDNSMasq();
         }
         else{
-            killBTDNSMasq();;
+            killBTDNSMasq();
         }
 
     }
