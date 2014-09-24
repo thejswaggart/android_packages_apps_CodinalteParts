@@ -50,6 +50,11 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name=".Sponsors"
+            android:label="@string/title_activity_sposnsors" >
+        </activity>
     </application>
 
 </manifest>

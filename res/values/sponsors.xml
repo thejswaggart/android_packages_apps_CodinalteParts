@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sponsor_section">Sponsors</string>
+    <string name="sponsor_thank_you">Thank you all for you support!</string>
+    <string name="mhair_dekmezian">Mhair Dekmezian</string>
+    <string name="khoa_phan">Khoa Phan</string>
+    <string name="mark_edwards">Mark Edwards</string>
+    <string name="manfred_glanzer">Manfred Glanzer (GomJabbarTheRealOne)</string>
+    <string name="allen_tovar">Allen Tovar</string>
+    <string name="paul_mansfield">Paul Mansfield (speculatrix)</string>
+    <string name="john_mcginly">John McGinley (jcmcg1)</string>
+    <string name="greg_turner">Greg Turner (GTurn)</string>
+    <string name="howard_cao">Howard Cao (HJC73734)</string>
+    <string name="ramaneesaran_thambaiah">Ramaneesaran Thambaiah (Exothermic)</string>
+    <string name="robert_taylor">Rober Taylor</string>
+    <string name="deshawn_wilborn">DeShawn Wilborn (wilbigdaddy2000)</string>
+    <string name="julio_sandoval">Julio Sandoval (imsonotreal)</string>
+    <string name="carl_miller">Carl Miller (Unjustied Dev)</string>
+
+
+</resources>
