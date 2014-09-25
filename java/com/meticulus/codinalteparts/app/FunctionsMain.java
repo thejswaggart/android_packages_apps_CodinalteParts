@@ -8,6 +8,7 @@ import android.os.Build;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * Created by meticulus on 4/7/14.
@@ -18,6 +19,10 @@ public class FunctionsMain {
 
     /* General */
     private static final String TEMP_DIR_CMD = "mkdir -p /data/local/tmp";
+
+    /* Venturi Variant */
+
+    private static final String VV_DAT_PATH= "/efs/buyer_code.dat";
 
     /* DoubleTap2wake */
     private static final String DT2W_PATH = "/sys/module/doubletap2wake/parameters";
@@ -100,7 +105,7 @@ public class FunctionsMain {
 
     private static final String BTPAN_DNSMASQ_PID_FILE = "/data/local/tmp/dnsmasq.pid";
 
-    private static final String CMD_DNSMASQ = "dnsmasq -x " + BTPAN_DNSMASQ_PID_FILE + " -r " +
+    private static final String CMD_DNSMASQ = "dnsmasq-meticulus -x " + BTPAN_DNSMASQ_PID_FILE + " -r " +
             BTPAN_DNSMASQ_RESOLV_FILE;
 
     private static final String CMD_KILL_DNSMASQ = "kill $(cat " + BTPAN_DNSMASQ_PID_FILE + ")";
@@ -140,6 +145,21 @@ public class FunctionsMain {
 
     private static final String LMKNKP_PROC_LIST = "wpa_supplicant,rild,at_core,at_distributor";
 
+
+    public static void setVenturiVariantCode(String code){
+        try{
+        CommandUtility.ExecuteNoReturn("echo " + code + " > " +VV_DAT_PATH,true,false);
+        }catch(Exception ex){ex.printStackTrace();}
+    }
+    public static String getVenturiVariantCode(){
+
+        String retval = "ERR";
+        try{
+            retval = CommandUtility.ExecuteShellCommandTrimmed("cat " + VV_DAT_PATH,true,false);
+        }catch(Exception ex){ex.printStackTrace();}
+        return retval;
+
+    }
 
     public static void setSweep2Wake(boolean enabled){
         try {
@@ -229,7 +249,7 @@ public class FunctionsMain {
         boolean retval = false;
         String pid = "";
         try{
-            pid = CommandUtility.ExecuteShellCommandTrimmed("ps | grep dnsmasq | awk -F' ' '{print $2}'",false, false);
+            pid = CommandUtility.ExecuteShellCommandTrimmed("ps | grep dnsmasq-meticulus | awk -F' ' '{print $2}'",false, false);
         }
         catch(Exception ex){ex.printStackTrace();}
 
@@ -292,7 +312,7 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true, false);
             CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, true, false);
         }
         catch (Exception e){e.printStackTrace();}
@@ -308,12 +328,12 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true, false);
             /*
             Create resolv.conf file.
              */
-            CommandUtility.ExecuteNoReturn(CMD_DNS1,false, false);
-            CommandUtility.ExecuteNoReturn(CMD_DNS2, false, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS1,true, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS2, true, false);
             Log.i(TAG, "Running dnsmasq...");
             CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true, true);
         }

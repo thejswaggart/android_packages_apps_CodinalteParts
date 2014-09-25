@@ -23,19 +23,19 @@ public class MainActivity extends Activity {
 
     TextView kernel,networking,workarounds,performance,debugging; /* Headers */
 
-    Switch sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
+    Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
             googledns, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
             autologcat, autokmsg, autoril; /* Debugging */
 
-    ImageView whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
+    ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
             whatis_googledns, /* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
-    LinearLayout sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
+    LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
             googledns_layout, /* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
@@ -56,6 +56,7 @@ public class MainActivity extends Activity {
         debugging = (TextView) findViewById(R.id.debugging_textview);
 
         /* Assign all switches */
+        venturi_variant = (Switch) findViewById((R.id.switch_venturi_variant));
         sweep2wake = (Switch) findViewById((R.id.switch_sweep2wake));
         doubletap2wake = (Switch) findViewById((R.id.switch_doubletap2wake));
         bln = (Switch) findViewById((R.id.switch_bln));
@@ -72,6 +73,7 @@ public class MainActivity extends Activity {
         autoril = (Switch)findViewById(R.id.switch_autorillog);
 
         /* Assign all switches onCheckChanged*/
+        venturi_variant.setOnCheckedChangeListener(switchListener);
         sweep2wake.setOnCheckedChangeListener(switchListener);
         doubletap2wake.setOnCheckedChangeListener(switchListener);
         bln.setOnCheckedChangeListener(switchListener);
@@ -86,6 +88,9 @@ public class MainActivity extends Activity {
         autologcat.setOnCheckedChangeListener(switchListener);
         autokmsg.setOnCheckedChangeListener(switchListener);
         autoril.setOnCheckedChangeListener(switchListener);
+
+        whatis_venturi_variant = (ImageView) findViewById(R.id.whatis_venturi_variant);
+        whatis_venturi_variant.setOnClickListener(switchClickListener);
 
         whatis_doubletap2wake = (ImageView) findViewById(R.id.whatis_doubletap2wake);
         whatis_doubletap2wake.setOnClickListener(switchClickListener);
@@ -131,6 +136,7 @@ public class MainActivity extends Activity {
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
+        venturi_variant_layout = (LinearLayout) findViewById(R.id.venturi_variant_layout);
         sweep2wake_layout = (LinearLayout) findViewById(R.id.sweep2wake_layout);
         doubletap2wake_layout = (LinearLayout) findViewById(R.id.doubletap2wake_layout);
         bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
@@ -167,6 +173,7 @@ public class MainActivity extends Activity {
         }
         else if(device.equals("m470")){
 
+            venturi_variant_layout.setVisibility(View.GONE);
             bln_layout.setVisibility(View.GONE);
             blnblink_layout.setVisibility(View.GONE);
 
@@ -182,16 +189,17 @@ public class MainActivity extends Activity {
 
 
         }
-        //else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
+        else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
 
-        //    kernel.setVisibility(View.GONE);
-        //    sweep2wake_layout.setVisibility(View.GONE);
-        //}
+            venturi_variant_layout.setVisibility(View.GONE);
+        }
 
     }
 
     private void prepareUI(){
 
+        String varcode = FunctionsMain.getVenturiVariantCode();
+        venturi_variant.setChecked(varcode.equals("XAA") || varcode.equals("XAC"));
         doubletap2wake.setChecked(sharedPref.getBoolean("doubletap2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled)));
         sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
         bln.setChecked(sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled)));
@@ -213,7 +221,12 @@ public class MainActivity extends Activity {
         public void onClick(View view) {
 
             ImageView thisSwitch = (ImageView)view;
-            if(thisSwitch == whatis_doubletap2wake){
+            if(thisSwitch == whatis_venturi_variant){
+                String varcode = FunctionsMain.getVenturiVariantCode();
+                ShowDialog("USA Variant",getString(R.string.venturi_variant_desc) + "\n\nYour variant code is '" +
+                        varcode + "'");
+            }
+            else if(thisSwitch == whatis_doubletap2wake){
                 ShowDialog("DoubleTap2wake",getString(R.string.doubletap2wake_desc));
             }
             else if(thisSwitch == whatis_sweep2wake){
@@ -265,7 +278,17 @@ public class MainActivity extends Activity {
 
             Switch thisSwitch = (Switch)compoundButton;
             SharedPreferences.Editor editor = sharedPref.edit();
-            if(thisSwitch == doubletap2wake){
+            if(thisSwitch == venturi_variant){
+                String varcode = FunctionsMain.getVenturiVariantCode();
+                if(b) {
+                    if(!varcode.equals("XAA") && !varcode.equals("XAC"))
+                        FunctionsMain.setVenturiVariantCode("XAA");
+                } else {
+                    if(varcode.equals("XAA") || varcode.equals("XAC"))
+                        FunctionsMain.setVenturiVariantCode("XAA");
+                }
+            }
+            else if(thisSwitch == doubletap2wake){
                 if(b != sharedPref.getBoolean("doubletap2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled))) {
                     FunctionsMain.setDoubleTap2Wake(b);
                     editor.putBoolean("doubletap2wake", b);
