@@ -1,4 +1,4 @@
-android_packages_apps_CodinalteParts
+CodinalteParts
 ====================================
 
 This apps is integrated into the Settings app on my ROM's but should still be usable as a standalone app.
