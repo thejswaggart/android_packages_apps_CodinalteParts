@@ -21,24 +21,27 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    TextView kernel,networking,workarounds,performance,debugging; /* Headers */
+    TextView kernel,networking,workarounds,performance,charger,debugging; /* Headers */
 
     Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
             googledns, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
+            charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
             whatis_googledns, /* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
+            whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
             googledns_layout, /* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
+            charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
 
     SharedPreferences sharedPref;
@@ -53,6 +56,7 @@ public class MainActivity extends Activity {
         networking = (TextView) findViewById(R.id.network_textview);
         workarounds = (TextView) findViewById(R.id.workarounds_texview);
         performance = (TextView) findViewById(R.id.performance_textview);
+        charger = (TextView) findViewById(R.id.charger_textview);
         debugging = (TextView) findViewById(R.id.debugging_textview);
 
         /* Assign all switches */
@@ -68,6 +72,8 @@ public class MainActivity extends Activity {
         h264softdec = (Switch) findViewById(R.id.switch_h264softdec);
         cpu2 = (Switch) findViewById(R.id.switch_cpu2);
         LMKNKP = (Switch) findViewById(R.id.switch_LMKNKP);
+        charger_show_datetime = (Switch) findViewById(R.id.switch_charger_show_datetime);
+        charger_no_suspend = (Switch) findViewById(R.id.switch_charger_no_suspend);
         autologcat = (Switch) findViewById(R.id.switch_autologcat);
         autokmsg = (Switch) findViewById(R.id.switch_autokmsg);
         autoril = (Switch)findViewById(R.id.switch_autorillog);
@@ -85,6 +91,8 @@ public class MainActivity extends Activity {
         h264softdec.setOnCheckedChangeListener(switchListener);
         cpu2.setOnCheckedChangeListener(switchListener);
         LMKNKP.setOnCheckedChangeListener(switchListener);
+        charger_show_datetime.setOnCheckedChangeListener(switchListener);
+        charger_no_suspend.setOnCheckedChangeListener(switchListener);
         autologcat.setOnCheckedChangeListener(switchListener);
         autokmsg.setOnCheckedChangeListener(switchListener);
         autoril.setOnCheckedChangeListener(switchListener);
@@ -119,6 +127,12 @@ public class MainActivity extends Activity {
         whatis_h264softdec = (ImageView) findViewById(R.id.whatis_h264softdec);
         whatis_h264softdec.setOnClickListener(switchClickListener);
 
+        whatis_charger_show_datetime = (ImageView) findViewById(R.id.what_is_charger_show_datetime);
+        whatis_charger_show_datetime.setOnClickListener(switchClickListener);
+
+        whatis_charger_no_suspend = (ImageView) findViewById(R.id.what_is_charger_no_suspend);
+        whatis_charger_no_suspend.setOnClickListener(switchClickListener);
+
         whatis_cpu2 = (ImageView) findViewById(R.id.whatis_cpu2);
         whatis_cpu2.setOnClickListener(switchClickListener);
 
@@ -146,6 +160,8 @@ public class MainActivity extends Activity {
         incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
         bttether_layout = (LinearLayout) findViewById(R.id.bttether_layout);
         h264softdec_layout = (LinearLayout) findViewById(R.id.h264softdec_layout);
+        charger_show_datetime_layout = (LinearLayout) findViewById(R.id.charger_show_datetime_layout);
+        charger_no_suspend_layout = (LinearLayout) findViewById(R.id.charger_no_suspend_layout);
         cpu2_layout = (LinearLayout) findViewById(R.id.CPU2_layout);
         LMKNKP_layout = (LinearLayout) findViewById(R.id.LMKNKP_layout);
 
@@ -211,6 +227,8 @@ public class MainActivity extends Activity {
         h264softdec.setChecked(sharedPref.getBoolean("h264softdec",getResources().getBoolean(R.bool.h264softdec_default_enabled)));
         cpu2.setChecked(sharedPref.getBoolean("cpu2", true));
         LMKNKP.setChecked(sharedPref.getBoolean("LMKNKP", getResources().getBoolean(R.bool.LMKNKP_default_enabled)));
+        charger_show_datetime.setChecked(FunctionsMain.getChargerShowDateTime());
+        charger_no_suspend.setChecked(FunctionsMain.getChargerNoSuspend());
         autologcat.setChecked(sharedPref.getBoolean("autologcat",false));
         autokmsg.setChecked(sharedPref.getBoolean("autokmsg",false));
         autoril.setChecked(sharedPref.getBoolean("autoril",false));
@@ -253,6 +271,12 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == whatis_h264softdec){
                 ShowDialog("H.264 Software Decoder",getString(R.string.h264softdec_desc));
+            }
+            else if(thisSwitch == whatis_charger_show_datetime){
+                ShowDialog("Date and Time in Charger",getString(R.string.charger_showdatetime_desc));
+            }
+            else if(thisSwitch == whatis_charger_no_suspend){
+                ShowDialog("No Suspend in Charger",getString(R.string.charger_nosuspend_desc));
             }
             else if(thisSwitch == whatis_cpu2){
                 ShowDialog("CPU2",getString(R.string.cpu2_desc));
@@ -352,6 +376,12 @@ public class MainActivity extends Activity {
             else if(thisSwitch == h264softdec){
                 editor.putBoolean("h264softdec", b);
                 FunctionsMain.setH264SoftDec(b);
+            }
+            else if(thisSwitch == charger_show_datetime){
+                FunctionsMain.setChargerShowDateTime(b);
+            }
+            else if(thisSwitch == charger_no_suspend){
+                FunctionsMain.setChargerNoSuspend(b);
             }
             else if(thisSwitch == cpu2){
                 editor.putBoolean("cpu2", b);

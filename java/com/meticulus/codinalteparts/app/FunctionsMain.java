@@ -88,6 +88,22 @@ public class FunctionsMain {
 
     private static final String CPU2_DISABLE_COMMAND = "echo 0 >" + CPU2_ONLINE_PATH;
 
+    /* Offline Charging */
+
+    private static final String CHARGER_SETTINGS_PATH = "/data/misc/charger";
+
+    private static final String CHARGER_SHOWDATETIME_PATH = CHARGER_SETTINGS_PATH + "/charger_show_datetime";
+
+    private static final String CHARGER_SHOWDATETIME_ENABLE = "touch " + CHARGER_SHOWDATETIME_PATH;
+
+    private static final String CHARGER_SHOWDATETIME_DISABLE = "rm " + CHARGER_SHOWDATETIME_PATH;
+
+    private static final String CHARGER_NOSUSPEND_PATH = CHARGER_SETTINGS_PATH + "/charger_no_suspend";
+
+    private static final String CHARGER_NOSUSPEND_ENABLE = "touch " + CHARGER_NOSUSPEND_PATH;
+
+    private static final String CHARGER_NOSUSPEND_DISABLE = "rm " + CHARGER_NOSUSPEND_PATH;
+
     /* Bluetooth Commands */
 
     private static final String CMD_BTPAN_DHCP = "netcfg bt-pan dhcp";
@@ -148,7 +164,7 @@ public class FunctionsMain {
 
     public static void setVenturiVariantCode(String code){
         try{
-        CommandUtility.ExecuteNoReturn("echo " + code + " > " +VV_DAT_PATH,true,false);
+            CommandUtility.ExecuteNoReturn("echo " + code + " > " +VV_DAT_PATH,true,false);
         }catch(Exception ex){ex.printStackTrace();}
     }
     public static String getVenturiVariantCode(){
@@ -158,6 +174,47 @@ public class FunctionsMain {
             retval = CommandUtility.ExecuteShellCommandTrimmed("cat " + VV_DAT_PATH,true,false);
         }catch(Exception ex){ex.printStackTrace();}
         return retval;
+
+    }
+
+    public static void setChargerShowDateTime(boolean enabled) {
+
+        try {
+            if (enabled) {
+                Log.i(TAG, "Enabling ChargerShowDateTime");
+                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,true,false);
+                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_ENABLE, true, false);
+            } else {
+                Log.i(TAG, "Disabling ChargerShowDateTime");
+                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_DISABLE, true, false);
+            }
+        }catch(Exception ex){ex.printStackTrace();}
+
+    }
+
+    public static boolean getChargerShowDateTime() {
+
+        return new File(CHARGER_SHOWDATETIME_PATH).exists();
+
+    }
+    public static void setChargerNoSuspend(boolean enabled) {
+
+        try {
+            if (enabled) {
+                Log.i(TAG, "Enabling ChargerShowDateTime");
+                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,true,false);
+                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_ENABLE, true, false);
+            } else {
+                Log.i(TAG, "Disabling ChargerShowDateTime");
+                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_DISABLE, true, false);
+            }
+        }catch(Exception ex){ex.printStackTrace();}
+
+    }
+
+    public static boolean getChargerNoSuspend() {
+
+        return new File(CHARGER_NOSUSPEND_PATH).exists();
 
     }
 
