@@ -2,9 +2,11 @@
 <resources>
     <string name="sponsor_section">Sponsors</string>
     <string name="sponsor_thank_you">Thank you all for you support!</string>
+    <string name="lars_hansen">Lars Hansen</string>
+    <string name="mark_edwards">Mark Edwards</string>
+    <string name="anthony_april">Anthony April</string>
     <string name="mhair_dekmezian">Mhair Dekmezian</string>
     <string name="khoa_phan">Khoa Phan</string>
-    <string name="mark_edwards">Mark Edwards</string>
     <string name="manfred_glanzer">Manfred Glanzer (GomJabbarTheRealOne)</string>
     <string name="allen_tovar">Allen Tovar</string>
     <string name="paul_mansfield">Paul Mansfield (speculatrix)</string>
