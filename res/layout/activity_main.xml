@@ -48,6 +48,7 @@
                         android:typeface="monospace"
                         android:padding="5dp"
                         android:textSize="15dp"
+			android:textColor="#FFFFFF"
                         android:gravity="center_vertical|center_horizontal" />
 
                     <TextView
@@ -57,6 +58,7 @@
                         android:text="@string/extras_section_name"
                         android:id="@+id/textView2"
                         android:typeface="monospace"
+			android:textColor="#FFFFFF"
                         android:textStyle="bold|italic"
                         android:gravity="center_vertical|center_horizontal" />
 
@@ -68,6 +70,7 @@
                         android:id="@+id/textView3"
                         android:typeface="monospace"
                         android:padding="5dp"
+			android:textColor="#FFFFFF"
                         android:textStyle="italic"
                         android:gravity="center_vertical|center_horizontal"
                         android:textSize="10dp"
@@ -84,6 +87,7 @@
                 android:id="@+id/kernel_textview"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
+		android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="10dp"
                 android:background="@android:drawable/dialog_holo_dark_frame"
@@ -113,6 +117,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -150,6 +155,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -188,6 +194,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -224,6 +231,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace"
                     android:textSize="12dp" />
 
@@ -262,6 +270,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -284,6 +293,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+		android:textColor="#FFFFFF"
                 android:textSize="10dp"
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:gravity="center" />
@@ -312,6 +322,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace"/>
 
@@ -335,6 +346,7 @@
                 android:layout_alignParentStart="true"
                 style="@android:style/TextAppearance.DialogWindowTitle"
                 android:textStyle="bold"
+		android:textColor="#FFFFFF"
                 android:textSize="10dp"
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:gravity="center" />
@@ -363,6 +375,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -400,6 +413,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -439,6 +453,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -475,6 +490,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -495,6 +511,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
+		android:textColor="#FFFFFF"
                 android:textSize="10dp"
                 android:id="@+id/performance_textview"
                 android:background="@android:drawable/dialog_holo_dark_frame"
@@ -524,6 +541,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -560,6 +578,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -580,6 +599,7 @@
                 android:id="@+id/charger_textview"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
+		android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:textSize="10dp"
                 android:background="@android:drawable/dialog_holo_dark_frame"
@@ -609,6 +629,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -644,6 +665,7 @@
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
                     android:textSize="12dp"
                     android:typeface="monospace" />
 
@@ -665,6 +687,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:textSize="10dp"
+		android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:gravity="center" />
@@ -694,6 +717,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -729,6 +753,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
@@ -764,6 +789,7 @@
                     android:layout_weight="0.99"
                     android:paddingTop="20dp"
                     android:textSize="12dp"
+		    android:textColor="#FFFFFF"
                     android:typeface="monospace" />
 
                 <ImageView
