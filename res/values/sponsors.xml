@@ -2,6 +2,10 @@
 <resources>
     <string name="sponsor_section">Sponsors</string>
     <string name="sponsor_thank_you">Thank you all for you support!</string>
+    <string name="jon_duncan">Jon Duncan</string>
+    <string name="lesly_hiatt">Lesly Hiatt</string>
+    <string name="randy_nicholas">Randy Nicholas</string>
+    <string name="creart_project">Cre.Art Project (www.creartproject.com)</string>
     <string name="john_warner">John Warner (Hookmt)</string>
     <string name="jurgen_schramm">Jürgen Schramm</string>
     <string name="mitchell_jones">Mitchell Jones</string>
