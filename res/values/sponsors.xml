@@ -2,6 +2,15 @@
 <resources>
     <string name="sponsor_section">Sponsors</string>
     <string name="sponsor_thank_you">Thank you all for you support!</string>
+    <string name="joseph_scotti">Joseph Scotti</string>
+    <string name="andrew_hin">Andrew Hin</string>
+    <string name="mk_enterprises">MK ENTERPRISES</string>
+    <string name="john_lewis">John Lewis</string>
+    <string name="david_dauria">David Dauria</string>
+    <string name="omar_rodriquez">Omar Rodriguez</string>
+    <string name="hayeon_hwang">Hayeon Hwang</string>
+    <string name="patrick_weaver">Patrick Weaver</string>
+    <string name="aaron_march">Aaron March</string> 
     <string name="jon_duncan">Jon Duncan</string>
     <string name="lesly_hiatt">Lesly Hiatt</string>
     <string name="randy_nicholas">Randy Nicholas</string>
