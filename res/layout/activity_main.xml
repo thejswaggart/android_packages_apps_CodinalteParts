@@ -283,6 +283,8 @@
                     android:baselineAlignBottom="false" />
             </LinearLayout>
 
+
+
             <TextView
                 style="@android:style/TextAppearance.DialogWindowTitle"
                 android:layout_width="fill_parent"
@@ -297,7 +299,43 @@
                 android:textSize="10dp"
                 android:background="@android:drawable/dialog_holo_dark_frame"
                 android:gravity="center" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:weightSum="1"
+                android:id="@+id/rdm_wlan_mac_layout"
+                android:layout_margin="10dp"
+                android:background="#444444">
 
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rdm_wlan_mac_title"
+                    android:id="@+id/switch_rdm_wlan_mac"
+                    android:paddingBottom="20dp"
+                    android:checked="false"
+                    android:enabled="true"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:focusableInTouchMode="false"
+                    android:layout_weight="0.99"
+                    android:paddingTop="20dp"
+                    android:textSize="12dp"
+                    android:textColor="#FFFFFF"
+                    android:typeface="monospace" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/whatis_rdm_wlan_mac"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"
+                    android:baselineAlignBottom="false" />
+            </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
@@ -315,7 +353,7 @@
                     android:text="@string/googledns_title"
                     android:id="@+id/switch_googledns"
                     android:paddingBottom="20dp"
-                    android:checked="true"
+                    android:checked="false"
                     android:enabled="true"
                     android:paddingLeft="20dp"
                     android:paddingRight="0dp"

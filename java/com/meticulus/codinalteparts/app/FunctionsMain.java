@@ -3,12 +3,14 @@ package com.meticulus.codinalteparts.app;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.wifi.WifiManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Random;
 
 /**
  * Created by meticulus on 4/7/14.
@@ -479,6 +481,43 @@ public class FunctionsMain {
                     LMKNKP_PROC_LIST_TAIL,true, false);
         }
         catch(Exception e){e.printStackTrace();}
+    }
+
+    private static String create_random_mac() {
+        String hex = "0123456789ABCDEF";
+        String mac = "";
+        Random rnd = new Random();
+        while (mac.length() < 17) {
+            int offset = rnd.nextInt(15);
+            mac = mac + hex.substring(offset, offset + 1);
+            offset = rnd.nextInt(15);
+            mac = mac + hex.substring(offset, offset + 1);
+            mac = mac + ":";
+        }
+        mac = mac.substring(0, 17);
+        return mac;
+    }
+
+    public static String set_random_mac(Context context) {
+
+        try {
+            WifiManager manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            if (manager.isWifiEnabled()) {
+                manager.setWifiEnabled(false);
+                Thread.sleep(200);
+            }
+            String mac = create_random_mac();
+            //CommandUtility.ExecuteNoReturn("rmmod dhd", true, false);
+            CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
+            manager.setWifiEnabled(true);
+	    Thread.sleep(2000);
+	    if(manager.isWifiEnabled())	
+            	return mac;
+	    else
+		return set_random_mac(context);
+        }
+        catch(Exception e){e.printStackTrace();}
+        return "ERROR!";
     }
 
     public static void testProp()

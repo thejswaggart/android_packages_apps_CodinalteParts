@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -24,21 +25,21 @@ public class MainActivity extends Activity {
     TextView kernel,networking,workarounds,performance,charger,debugging; /* Headers */
 
     Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
-            googledns, /* Networking */
+            googledns, rdm_wlan_mac, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
             charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
-            whatis_googledns, /* Networking */
+            whatis_googledns, whatis_rdm_wlan_mac,/* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
-            googledns_layout, /* Networking */
+            googledns_layout, rdm_wlan_mac_layout,/* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
             charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
         doubletap2wake = (Switch) findViewById((R.id.switch_doubletap2wake));
         bln = (Switch) findViewById((R.id.switch_bln));
         blnblink = (Switch) findViewById((R.id.switch_blnblink));
+        rdm_wlan_mac = (Switch)findViewById((R.id.switch_rdm_wlan_mac));
         googledns = (Switch) findViewById(R.id.switch_googledns);
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
         incallaudio = (Switch) findViewById(R.id.switch_incallaudio);
@@ -85,6 +87,7 @@ public class MainActivity extends Activity {
         bln.setOnCheckedChangeListener(switchListener);
         blnblink.setOnCheckedChangeListener(switchListener);
         googledns.setOnCheckedChangeListener(switchListener);
+        rdm_wlan_mac.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
         incallaudio.setOnCheckedChangeListener(switchListener);
         bttether.setOnCheckedChangeListener(switchListener);
@@ -114,6 +117,9 @@ public class MainActivity extends Activity {
 
         whatis_googledns = (ImageView) findViewById(R.id.whatis_googledns);
         whatis_googledns.setOnClickListener(switchClickListener);
+
+        whatis_rdm_wlan_mac = (ImageView) findViewById(R.id.whatis_rdm_wlan_mac);
+        whatis_rdm_wlan_mac.setOnClickListener(switchClickListener);
 
         whatis_clockfreeze = (ImageView) findViewById(R.id.whatis_clockfreeze);
         whatis_clockfreeze.setOnClickListener(switchClickListener);
@@ -155,6 +161,7 @@ public class MainActivity extends Activity {
         doubletap2wake_layout = (LinearLayout) findViewById(R.id.doubletap2wake_layout);
         bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
         blnblink_layout = (LinearLayout) findViewById(R.id.blnblink_layout);
+        rdm_wlan_mac_layout = (LinearLayout) findViewById(R.id.rdm_wlan_mac_layout);
         googledns_layout = (LinearLayout) findViewById(R.id.googledns_layout);
         clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
         incallaudio_layout = (LinearLayout) findViewById(R.id.incallaudio_layout);
@@ -169,19 +176,20 @@ public class MainActivity extends Activity {
 
         String device =  "";
         try {
-            device = CommandUtility.ExecuteShellCommandTrimmed("getprop ro.build.product", true, false);
+            device = SystemProperties.get("ro.build.product");
+            //device = CommandUtility.ExecuteShellCommandTrimmed("getprop ro.build.product", true, false);
             Log.i("Codinalte Parts", "Device = '" + device + "'" );
         }
         catch(Exception ex){ex.printStackTrace();}
 
         /* disable for all, patches disabled */
         clockfreeze_layout.setVisibility(View.GONE);
-
+        h264softdec_layout.setVisibility(View.GONE);
         if(device.equals("YP-G70")){
 
             clockfreeze_layout.setVisibility(View.GONE);
             incallaudio_layout.setVisibility(View.GONE);
-            h264softdec_layout.setVisibility(View.GONE);
+            /*h264softdec_layout.setVisibility(View.GONE);*/
 
             performance.setVisibility(View.GONE);
             cpu2_layout.setVisibility(View.GONE);
@@ -195,7 +203,7 @@ public class MainActivity extends Activity {
 
             workarounds.setVisibility(View.GONE);
             bttether_layout.setVisibility(View.GONE);
-            h264softdec_layout.setVisibility(View.GONE);
+            /*h264softdec_layout.setVisibility(View.GONE);*/
             clockfreeze_layout.setVisibility(View.GONE);
             incallaudio_layout.setVisibility(View.GONE);
 
@@ -224,7 +232,7 @@ public class MainActivity extends Activity {
         clockfreeze.setChecked(sharedPref.getBoolean("clockfreeze", getResources().getBoolean(R.bool.clockfreeze_default_enabled)));
         incallaudio.setChecked(sharedPref.getBoolean("incallaudio",getResources().getBoolean(R.bool.incallaudio_default_enabled)));
         bttether.setChecked(sharedPref.getBoolean("bttether",getResources().getBoolean(R.bool.bttether_default_enabled)));
-        h264softdec.setChecked(sharedPref.getBoolean("h264softdec",getResources().getBoolean(R.bool.h264softdec_default_enabled)));
+        /*h264softdec.setChecked(sharedPref.getBoolean("h264softdec",getResources().getBoolean(R.bool.h264softdec_default_enabled)));*/
         cpu2.setChecked(sharedPref.getBoolean("cpu2", true));
         LMKNKP.setChecked(sharedPref.getBoolean("LMKNKP", getResources().getBoolean(R.bool.LMKNKP_default_enabled)));
         charger_show_datetime.setChecked(FunctionsMain.getChargerShowDateTime());
@@ -255,6 +263,9 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == whatis_blnblink){
                 ShowDialog("Blinking Backlight Notification",getString(R.string.blnblink_desc));
+            }
+            else if(thisSwitch == whatis_rdm_wlan_mac){
+                ShowDialog("Random WLAN MAC:",getString(R.string.rdm_wlan_mac_desc));
             }
             else if(thisSwitch == whatis_googledns){
                 ShowDialog("Google DNS",getString(R.string.googledns_desc));
@@ -340,6 +351,13 @@ public class MainActivity extends Activity {
                     editor.putBoolean("blnblink", b);
                 }
 
+            }
+            else if(thisSwitch == rdm_wlan_mac) {
+                ShowDialog("New Wlan MAC",FunctionsMain.set_random_mac(getApplicationContext()));
+                try {
+                    thisSwitch.setChecked(false);
+                }
+                catch(Exception e){e.printStackTrace();}
             }
             else if(thisSwitch == googledns){
                 if(b != sharedPref.getBoolean("googledns", getResources().getBoolean(R.bool.googledns_default_enabled))) {

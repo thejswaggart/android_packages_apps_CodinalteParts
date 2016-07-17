@@ -10,6 +10,7 @@
     <string name="sweep2wake_title">Sweep2Wake</string>
     <string name="bln_title">BLN</string>
     <string name="blnblink_title">BLN: Blink!</string>
+    <string name="rdm_wlan_mac_title">Wifi: Randomize MAC</string>
     <string name="network_header">NETWORKING</string>
     <string name="googledns_title">Google DNS</string>
     <string name="workarounds_header">WORKAROUNDS</string>
@@ -42,6 +43,8 @@
         back-light on your capacitive buttons will illuminate. The button back-light will
         return to normal behavior after you wake the device.</string>
     <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.</string>
+    <string name="rdm_wlan_mac_desc">This will change your WIFI\'s MAC address to a random address.
+    WIFI will be disabled, a new MAC set and the WIFI re-enabled.</string>
     <string name="googledns_desc">Uses dnsmasq to force the use of Google\'s DNS servers
         instead of whatever is assigned by DHCP. Only known to work with Wifi.\n\nNOTE: Disable this
         if this device is used as a tethering "server"!</string>
