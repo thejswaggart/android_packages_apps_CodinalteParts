@@ -10,6 +10,7 @@
     <string name="sweep2wake_title">Sweep2Wake</string>
     <string name="bln_title">BLN</string>
     <string name="blnblink_title">BLN: Blink!</string>
+    <string name="otg_title">USB host mode</string>
     <string name="rdm_wlan_mac_title">Wifi: Randomize MAC</string>
     <string name="network_header">NETWORKING</string>
     <string name="googledns_title">Google DNS</string>
@@ -43,6 +44,10 @@
         back-light on your capacitive buttons will illuminate. The button back-light will
         return to normal behavior after you wake the device.</string>
     <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.</string>
+    <string name="otg_desc">Allows you to connect usb drives. This only works once per boot, which
+	means that once enabled, you can connected a drive as many times as you like. MTP and ADB are
+	disabled. Once disabled, MTP and ADB work again but this can not be re-enabled until you reboot.
+	</string>
     <string name="rdm_wlan_mac_desc">This will change your WIFI\'s MAC address to a random address.
     WIFI will be disabled, a new MAC set and the WIFI re-enabled.</string>
     <string name="googledns_desc">Uses dnsmasq to force the use of Google\'s DNS servers

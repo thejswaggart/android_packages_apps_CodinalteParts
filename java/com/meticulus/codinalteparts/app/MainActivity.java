@@ -24,21 +24,21 @@ public class MainActivity extends Activity {
 
     TextView kernel,networking,workarounds,performance,charger,debugging; /* Headers */
 
-    Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, /* Kernel */
+    Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, otg, /* Kernel */
             googledns, rdm_wlan_mac, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
             charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
-    ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, /* Kernel */
+    ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, whatis_otg, /* Kernel */
             whatis_googledns, whatis_rdm_wlan_mac,/* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
-    LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, /* Kernel */
+    LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, otg_layout, /* Kernel */
             googledns_layout, rdm_wlan_mac_layout,/* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
         doubletap2wake = (Switch) findViewById((R.id.switch_doubletap2wake));
         bln = (Switch) findViewById((R.id.switch_bln));
         blnblink = (Switch) findViewById((R.id.switch_blnblink));
+        otg = (Switch) findViewById((R.id.switch_otg));
         rdm_wlan_mac = (Switch)findViewById((R.id.switch_rdm_wlan_mac));
         googledns = (Switch) findViewById(R.id.switch_googledns);
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
@@ -86,6 +87,7 @@ public class MainActivity extends Activity {
         doubletap2wake.setOnCheckedChangeListener(switchListener);
         bln.setOnCheckedChangeListener(switchListener);
         blnblink.setOnCheckedChangeListener(switchListener);
+        otg.setOnCheckedChangeListener(switchListener);
         googledns.setOnCheckedChangeListener(switchListener);
         rdm_wlan_mac.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
@@ -114,6 +116,9 @@ public class MainActivity extends Activity {
 
         whatis_blnblink = (ImageView) findViewById(R.id.whatis_blnblink);
         whatis_blnblink.setOnClickListener(switchClickListener);
+        
+	whatis_otg = (ImageView) findViewById(R.id.whatis_otg);
+        whatis_otg.setOnClickListener(switchClickListener);
 
         whatis_googledns = (ImageView) findViewById(R.id.whatis_googledns);
         whatis_googledns.setOnClickListener(switchClickListener);
@@ -264,6 +269,9 @@ public class MainActivity extends Activity {
             else if(thisSwitch == whatis_blnblink){
                 ShowDialog("Blinking Backlight Notification",getString(R.string.blnblink_desc));
             }
+            else if(thisSwitch == whatis_otg){
+                ShowDialog("USB Host Mode",getString(R.string.otg_desc));
+            }
             else if(thisSwitch == whatis_rdm_wlan_mac){
                 ShowDialog("Random WLAN MAC:",getString(R.string.rdm_wlan_mac_desc));
             }
@@ -352,6 +360,18 @@ public class MainActivity extends Activity {
                 }
 
             }
+            else if(thisSwitch == otg) { 
+                try {
+		    if(FunctionsMain.read_usb_reset() < 2)
+                    	FunctionsMain.set_otg(b);
+		    else {
+			ShowDialog("Reboot Required","You'll need to reboot before using this again");
+		    	otg.setChecked(false);
+			otg.setEnabled(false);
+		    }
+                }
+                catch(Exception e){e.printStackTrace();}
+	    }
             else if(thisSwitch == rdm_wlan_mac) {
                 ShowDialog("New Wlan MAC",FunctionsMain.set_random_mac(getApplicationContext()));
                 try {

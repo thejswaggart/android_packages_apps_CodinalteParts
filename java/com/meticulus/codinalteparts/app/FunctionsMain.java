@@ -483,6 +483,26 @@ public class FunctionsMain {
         catch(Exception e){e.printStackTrace();}
     }
 
+    public static int read_usb_reset() {
+	try {
+	String result = CommandUtility.ExecuteShellCommandTrimmed("cat /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset",true,false);
+
+	return Integer.valueOf(result);
+	} catch(Exception e) {e.printStackTrace();}
+	return 3;
+    }
+
+    public static void set_otg(boolean on) {
+	try {
+	if(on) {
+	    CommandUtility.ExecuteNoReturn("echo otg > /sys/devices/platform/musb-ux500.0/musb-hdrc/mode", true, false);
+	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", true, false);
+	} else {
+	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", true, false); 
+	}
+        } catch(Exception e){e.printStackTrace();}
+    }
+
     private static String create_random_mac() {
         String hex = "0123456789ABCDEF";
         String mac = "";
