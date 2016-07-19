@@ -510,11 +510,13 @@ public class FunctionsMain {
             //CommandUtility.ExecuteNoReturn("rmmod dhd", true, false);
             CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
             manager.setWifiEnabled(true);
-	    Thread.sleep(2000);
-	    if(manager.isWifiEnabled())	
-            	return mac;
-	    else
-		return set_random_mac(context);
+	    Thread.sleep(1000);
+	    while(!manager.isWifiEnabled()) {
+		mac = create_random_mac();
+                CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
+		Thread.sleep(1000);
+	    }
+	    return mac;
         }
         catch(Exception e){e.printStackTrace();}
         return "ERROR!";
