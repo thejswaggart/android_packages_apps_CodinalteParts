@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Looper;
 import android.os.SystemProperties;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -17,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.ProgressDialog;
 
 import com.meticulus.codinalteparts.app.FunctionsMain;
 
@@ -245,6 +248,10 @@ public class MainActivity extends Activity {
         autologcat.setChecked(sharedPref.getBoolean("autologcat",false));
         autokmsg.setChecked(sharedPref.getBoolean("autokmsg",false));
         autoril.setChecked(sharedPref.getBoolean("autoril",false));
+	if(FunctionsMain.read_usb_reset() == 1)
+	    otg.setChecked(true);
+	else
+	    otg.setChecked(false);
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -373,11 +380,30 @@ public class MainActivity extends Activity {
                 catch(Exception e){e.printStackTrace();}
 	    }
             else if(thisSwitch == rdm_wlan_mac) {
-                ShowDialog("New Wlan MAC",FunctionsMain.set_random_mac(getApplicationContext()));
-                try {
-                    thisSwitch.setChecked(false);
+
+	    AsyncTask at = new AsyncTask() {
+	        ProgressDialog wait;
+                @Override
+                protected Object doInBackground(Object[] objects) {
+                    return FunctionsMain.set_random_mac(getApplicationContext());
                 }
-                catch(Exception e){e.printStackTrace();}
+
+                @Override
+                protected void onPostExecute(Object o) {
+                    super.onPostExecute(o);
+		    wait.dismiss();
+                    ShowDialog("New Wlan MAC",(String)o);
+		    //rdm_wlan_mac.setChecked(false);
+                }
+	        @Override
+	        protected void onPreExecute() {
+		    super.onPreExecute();
+		    wait = ShowIdProgDialog("Randomizing","Please Wait...");
+		    wait.show();	
+	        }
+            };
+	    if(b)	
+	    	at.execute(new Object[]{});
             }
             else if(thisSwitch == googledns){
                 if(b != sharedPref.getBoolean("googledns", getResources().getBoolean(R.bool.googledns_default_enabled))) {
@@ -488,14 +514,29 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void ShowDialog(String title,String message)
+    public AlertDialog ShowDialog(String title,String message)
+    {
+        return ShowDialog(title,message,true);
+    }
+    public AlertDialog ShowDialog(String title,String message, boolean okbtn)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton("OK", null);
+	if(okbtn)
+            builder.setPositiveButton("OK", null);
         AlertDialog dialog = builder.create();
         dialog.show();
+	return dialog;
     }
 
+    public ProgressDialog ShowIdProgDialog(String title,String message) {
+	ProgressDialog pdialog = new ProgressDialog(this);
+	pdialog.setTitle(title);
+	pdialog.setMessage(message);
+	pdialog.setIndeterminate(true);
+	pdialog.setCancelable(false);
+	pdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+	return pdialog;
+    }
 }

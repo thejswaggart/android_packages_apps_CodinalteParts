@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
+import android.net.wifi.WifiInfo;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.util.Log;
@@ -530,12 +531,13 @@ public class FunctionsMain {
             //CommandUtility.ExecuteNoReturn("rmmod dhd", true, false);
             CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
             manager.setWifiEnabled(true);
-	    Thread.sleep(1000);
 	    while(!manager.isWifiEnabled()) {
 		mac = create_random_mac();
                 CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 	    }
+            WifiInfo wifiInfo = manager.getConnectionInfo(); 
+            mac = wifiInfo == null ? null : wifiInfo.getMacAddress();
 	    return mac;
         }
         catch(Exception e){e.printStackTrace();}
