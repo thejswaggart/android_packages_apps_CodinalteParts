@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -68,11 +69,11 @@
                         android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/joseph_scotti" >
+                android:id="@+id/m_edwards_19438" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -88,18 +89,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/joseph_scotti"
+                    android:text="@string/m_edwards_19438"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/andrew_hin" >
+                android:id="@+id/p_bradeen_7677" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -115,18 +116,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/andrew_hin"
+                    android:text="@string/p_bradeen_7677"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mk_enterprises" >
+                android:id="@+id/k_wise_22014" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -142,18 +143,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/mk_enterprises"
+                    android:text="@string/k_wise_22014"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/john_lewis" >
+                android:id="@+id/v_nguyen_9579" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -169,18 +170,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/john_lewis"
+                    android:text="@string/v_nguyen_9579"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/david_daria" >
+                android:id="@+id/m_katz_18456" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -196,18 +197,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/david_dauria"
+                    android:text="@string/m_katz_18456"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/omar_rodriquez" >
+                android:id="@+id/m_mayfield_24401" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -223,18 +224,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/omar_rodriquez"
+                    android:text="@string/m_mayfield_24401"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/hayeon_hwang" >
+                android:id="@+id/l_hansen_7580" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -250,18 +251,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/hayeon_hwang"
+                    android:text="@string/l_hansen_7580"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/patrick_weaver" >
+                android:id="@+id/l_rosulek_14556" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -277,18 +278,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/patrick_weaver"
+                    android:text="@string/l_rosulek_14556"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/aaron_march" >
+                android:id="@+id/j_fontenot_11977" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -304,18 +305,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/aaron_march"
+                    android:text="@string/j_fontenot_11977"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/jon_ducan" >
+                android:id="@+id/m_dekmezian_31142" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -331,18 +332,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/jon_duncan"
+                    android:text="@string/m_dekmezian_31142"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/lesley_hiatt" >
+                android:id="@+id/v_medina_30883" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -358,18 +359,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/lesley_hiatt"
+                    android:text="@string/v_medina_30883"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/randy_nicholas" >
+                android:id="@+id/r_nicholas_17336" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -385,18 +386,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/randy_nicholas"
+                    android:text="@string/r_nicholas_17336"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/creart_project" >
+                android:id="@+id/j_schramm_15598" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -412,18 +413,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/creart_project"
+                    android:text="@string/j_schramm_15598"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/john_warner" >
+                android:id="@+id/m_katz_23017" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -439,18 +440,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/john_warner"
+                    android:text="@string/m_katz_23017"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/jurgen_schramm" >
+                android:id="@+id/w_edger_5191" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -466,18 +467,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/jurgen_schramm"
+                    android:text="@string/w_edger_5191"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mitchell_jones" >
+                android:id="@+id/s_yasin_6577" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -493,18 +494,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/mitchell_jones"
+                    android:text="@string/s_yasin_6577"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/anneli_curnock" >
+                android:id="@+id/r_seaberg_77" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -520,18 +521,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/anneli_curnock"
+                    android:text="@string/r_seaberg_77"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/sandra_gordon" >
+                android:id="@+id/n_spearman_25754" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -547,18 +548,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/sandra_gordon"
+                    android:text="@string/n_spearman_25754"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/juan_rodriguez" >
+                android:id="@+id/n_vaughn_3442" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -574,18 +575,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/juan_rodriguez"
+                    android:text="@string/n_vaughn_3442"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/guillermo_medina" >
+                android:id="@+id/m_enterprises_23929" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -601,18 +602,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/guillermo_medina"
+                    android:text="@string/m_enterprises_23929"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/virginio_medina" >
+                android:id="@+id/m_kuster_25788" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -628,18 +629,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/virginio_medina"
+                    android:text="@string/m_kuster_25788"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/geoffery_eakins" >
+                android:id="@+id/l_media_5183" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -655,18 +656,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/geoffery_eakins"
+                    android:text="@string/l_media_5183"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/brian_little" >
+                android:id="@+id/l_hiatt_29135" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -682,18 +683,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/brian_little"
+                    android:text="@string/l_hiatt_29135"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/john_koch" >
+                android:id="@+id/k_louque_29953" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -709,18 +710,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/john_koch"
+                    android:text="@string/k_louque_29953"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/william_cornejo" >
+                android:id="@+id/j_warner_17194" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -736,18 +737,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/william_cornejo"
+                    android:text="@string/j_warner_17194"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/vu_nguyen" >
+                android:id="@+id/j_koch_17590" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -763,18 +764,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/vu_nguyen"
+                    android:text="@string/j_koch_17590"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/samuel_page_brown" >
+                android:id="@+id/j_hall_17360" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -790,18 +791,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/samuel_page_brown"
+                    android:text="@string/j_hall_17360"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/todd_mccausland" >
+                android:id="@+id/h_hwang_20923" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -817,18 +818,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/todd_mccausland"
+                    android:text="@string/h_hwang_20923"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mathias_kuster" >
+                android:id="@+id/e_morales_31123" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -844,261 +845,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/mathias_kuster"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/william_edgar" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/william_edgar"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/christian_gitej" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/christian_gitej"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/jonathan_perez" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/jonathan_perez"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/artem_payechnyk" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/artem_payechnyk"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/peter_bradeen" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/peter_bradeen"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ryan_seaberg" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/ryan_seaberg"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/matt_mayfield_music" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/matt_mayfield_music"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ladislav_rosulek" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/ladislav_rosulek"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="italic" />
-            </LinearLayout>          
-	    <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/karl_wise" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/karl_wise"
+                    android:text="@string/e_morales_31123"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/mark_edwards" >
+                android:id="@+id/d_genin_18499" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1114,48 +872,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/mark_edwards"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold|italic"
-                    android:textColor="#fff917"
-                    android:textSize="15dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/lars_hansen" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/lars_hansen"
+                    android:text="@string/d_genin_18499"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/anthony_april" >
+                android:id="@+id/j_duncan_25200" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1171,45 +899,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/anthony_april"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mhair_dekmezian" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/mhair_dekmezian"
+                    android:text="@string/j_duncan_25200"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/khoa_phan" >
+                android:id="@+id/p_weaver_21807" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1225,128 +926,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/khoa_phan"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/manfred_glanzer" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/manfred_glanzer"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/allen_tovar" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/allen_tovar"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/paul_mansfield" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/paul_mansfield"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/john_mcginley" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/john_mcginly"
+                    android:text="@string/p_weaver_21807"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/greg_turner" >
+                android:id="@+id/t_mccausland_18278" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1362,157 +953,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/greg_turner"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/howard_cao" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/howard_cao"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ramaneesaran_thambaiah" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/ramaneesaran_thambaiah"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/robert_taylor" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/robert_taylor"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/deshawn_wilborn" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/deshawn_wilborn"
-                    android:textAlignment="gravity"
-                    android:singleLine="true"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/julio_sandoval" >
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sponsor"
-                    android:padding="5dp"
-                    android:maxHeight="30dp"
-                    android:maxWidth="30dp"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/julio_sandoval"
+                    android:text="@string/t_mccausland_18278"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"
                     android:textStyle="italic" />
             </LinearLayout>
-
-            <LinearLayout
+             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/carl_miller" >
+                android:id="@+id/t_smith_13582" >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1528,13 +980,1149 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/carl_miller"
+                    android:text="@string/t_smith_13582"
                     android:textAlignment="gravity"
                     android:singleLine="true"
                     android:layout_gravity="center"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/r_plunkett_412" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/r_plunkett_412"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/r_rebaterealm_30543" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/r_rebaterealm_30543"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/m_jones_5753" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/m_jones_5753"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/m_frelick_7361" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/m_frelick_7361"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/l_leavitt_25289" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/l_leavitt_25289"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_tindall_18780" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_tindall_18780"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_scotti_1592" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_scotti_1592"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_perez_5113" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_perez_5113"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_feliciano_32321" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_feliciano_32321"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_timothy_9205" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_timothy_9205"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/g_mendoza_28483" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/g_mendoza_28483"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/g_eakins_26010" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/g_eakins_26010"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/f_ramos_10157" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/f_ramos_10157"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/f_tamborra_9716" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/f_tamborra_9716"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/e_gro_1768" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/e_gro_1768"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/d_stoops_14831" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/d_stoops_14831"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/d_banga_10592" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/d_banga_10592"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/c_gitej_2046" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/c_gitej_2046"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/c_reynolds_22151" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/c_reynolds_22151"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_little_2442" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/b_little_2442"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_pasyechnyk_3445" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_pasyechnyk_3445"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_april_17076" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_april_17076"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_april_25880" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_april_25880"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_hin_25900" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_hin_25900"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_march_1537" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_march_1537"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/s_gordon_27670" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_gordon_27670"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_sprouse_21023" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/b_sprouse_21023"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_lewis_15534" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_lewis_15534"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/g_laporta_2286" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/g_laporta_2286"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/c_fleming_31434" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/c_fleming_31434"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_mundy_3834" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_mundy_3834"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/w_cornejo_1439" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/w_cornejo_1439"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/s_seng_22969" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/s_seng_22969"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/r_jones_15724" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/r_jones_15724"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/o_f_15939" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/o_f_15939"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/m_cokain_23582" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/m_cokain_23582"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/j_rodriguez_4247" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/j_rodriguez_4247"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/e_olszewska_615" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/e_olszewska_615"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/d_dauria_23112" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/d_dauria_23112"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/d_alleyne_30392" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/d_alleyne_30392"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_garcia_28833" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/b_garcia_28833"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
+            </LinearLayout>
+             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/a_perez_12575" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sponsor"
+                    android:padding="5dp"
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/a_perez_12575"
+                    android:textAlignment="gravity"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic" />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
+
