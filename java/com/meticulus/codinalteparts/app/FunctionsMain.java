@@ -229,10 +229,10 @@ public class FunctionsMain {
 
             if (enabled) {
                 Log.i(TAG,"Enabling Sweep2Wake");
-                CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, true, false);
+                CommandUtility.ExecuteNoReturn(S2W_ENABLE_CMD, false, false);
             }else {
                 Log.i(TAG,"Disabling Sweep2Wake");
-                CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, true, false);
+                CommandUtility.ExecuteNoReturn(S2W_DISABLE_CMD, false, false);
             }
 
             Log.i(TAG,"Sweep2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(S2W_GET_ENABLE_CMD,
@@ -248,10 +248,10 @@ public class FunctionsMain {
 
             if (enabled) {
                 Log.i(TAG,"Enabling DoubleTap2Wake");
-                CommandUtility.ExecuteNoReturn(DT2W_ENABLE_CMD, true, false);
+                CommandUtility.ExecuteNoReturn(DT2W_ENABLE_CMD, false, false);
             }else {
                 Log.i(TAG,"Disabling DoubleTap2Wake");
-                CommandUtility.ExecuteNoReturn(DT2W_DISABLE_CMD, true, false);
+                CommandUtility.ExecuteNoReturn(DT2W_DISABLE_CMD, false, false);
             }
 
             Log.i(TAG,"DoubleTap2Wake status: " + CommandUtility.ExecuteShellCommandTrimmed(DT2W_GET_ENABLE_CMD,
@@ -336,12 +336,12 @@ public class FunctionsMain {
             if(enabled)
             {
                 Log.i(TAG,"Enabling CPU2");
-                CommandUtility.ExecuteNoReturn(CPU2_ENABLE_COMMAND,true, false);
+                CommandUtility.ExecuteNoReturn(CPU2_ENABLE_COMMAND,false, false);
             }
             else
             {
                 Log.i(TAG,"Disabling CPU2");
-                CommandUtility.ExecuteNoReturn(CPU2_DISABLE_COMMAND, true, false);
+                CommandUtility.ExecuteNoReturn(CPU2_DISABLE_COMMAND, false, false);
             }
         }
         catch (Exception e){e.printStackTrace();}
@@ -415,11 +415,11 @@ public class FunctionsMain {
 
         try{
             if(on) {
-                CommandUtility.ExecuteNoReturn(ENABLE_H264SOFTDEC, true, false);
+                CommandUtility.ExecuteNoReturn(ENABLE_H264SOFTDEC, false, false);
                 Log.i(TAG, "Enabled h264softdec");
             }
             else {
-                CommandUtility.ExecuteNoReturn(DISABLE_H264SOFTDEC, true, false);
+                CommandUtility.ExecuteNoReturn(DISABLE_H264SOFTDEC, false, false);
                 Log.i(TAG, "Disabled h264softdec");
             }
         }
@@ -479,14 +479,14 @@ public class FunctionsMain {
         {
             Log.i(TAG, "Setting Not Killable Processes List...");
             CommandUtility.ExecuteNoReturn(LMKNKP_PROC_LIST_START + LMKNKP_PROC_LIST +
-                    LMKNKP_PROC_LIST_TAIL,true, false);
+                    LMKNKP_PROC_LIST_TAIL,false, false);
         }
         catch(Exception e){e.printStackTrace();}
     }
 
     public static int read_usb_reset() {
 	try {
-	String result = CommandUtility.ExecuteShellCommandTrimmed("cat /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset",true,false);
+	String result = CommandUtility.ExecuteShellCommandTrimmed("cat /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset",false,false);
 
 	return Integer.valueOf(result);
 	} catch(Exception e) {e.printStackTrace();}
@@ -496,10 +496,10 @@ public class FunctionsMain {
     public static void set_otg(boolean on) {
 	try {
 	if(on) {
-	    CommandUtility.ExecuteNoReturn("echo otg > /sys/devices/platform/musb-ux500.0/musb-hdrc/mode", true, false);
-	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", true, false);
+	    CommandUtility.ExecuteNoReturn("echo otg > /sys/devices/platform/musb-ux500.0/musb-hdrc/mode", false, false);
+	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", false, false);
 	} else {
-	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", true, false); 
+	    CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/ab8505-i2c.0/ab8500-usb.0/reset", false, false); 
 	}
         } catch(Exception e){e.printStackTrace();}
     }
@@ -529,11 +529,11 @@ public class FunctionsMain {
             }
             String mac = create_random_mac();
             //CommandUtility.ExecuteNoReturn("rmmod dhd", true, false);
-            CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
+            CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", false, false);
             manager.setWifiEnabled(true);
 	    while(!manager.isWifiEnabled()) {
 		mac = create_random_mac();
-                CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", true, false);
+                CommandUtility.ExecuteNoReturn("printf " + mac + " > /sys/module/board_codina_sdi/parameters/wlan_mac", false, false);
 		Thread.sleep(2000);
 	    }
             WifiInfo wifiInfo = manager.getConnectionInfo(); 
