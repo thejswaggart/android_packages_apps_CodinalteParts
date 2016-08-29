@@ -185,11 +185,11 @@ public class FunctionsMain {
         try {
             if (enabled) {
                 Log.i(TAG, "Enabling ChargerShowDateTime");
-                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,true,false);
-                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_ENABLE, true, false);
+                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,false,false);
+                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_ENABLE, false, false);
             } else {
                 Log.i(TAG, "Disabling ChargerShowDateTime");
-                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_DISABLE, true, false);
+                CommandUtility.ExecuteNoReturn(CHARGER_SHOWDATETIME_DISABLE, false, false);
             }
         }catch(Exception ex){ex.printStackTrace();}
 
@@ -205,11 +205,11 @@ public class FunctionsMain {
         try {
             if (enabled) {
                 Log.i(TAG, "Enabling ChargerShowDateTime");
-                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,true,false);
-                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_ENABLE, true, false);
+                CommandUtility.ExecuteNoReturn("mkdir -p " + CHARGER_SETTINGS_PATH,false,false);
+                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_ENABLE, false, false);
             } else {
                 Log.i(TAG, "Disabling ChargerShowDateTime");
-                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_DISABLE, true, false);
+                CommandUtility.ExecuteNoReturn(CHARGER_NOSUSPEND_DISABLE, false, false);
             }
         }catch(Exception ex){ex.printStackTrace();}
 
@@ -372,8 +372,8 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true, false);
-            CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, true, false);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
+            CommandUtility.ExecuteNoReturn(CMD_BTPAN_DHCP, false, false);
         }
         catch (Exception e){e.printStackTrace();}
     } 
@@ -388,14 +388,14 @@ public class FunctionsMain {
             /*
             Try to make sure that the temporary dir exists first.
              */
-            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,true, false);
+            CommandUtility.ExecuteNoReturn(TEMP_DIR_CMD,false, false);
             /*
             Create resolv.conf file.
              */
-            CommandUtility.ExecuteNoReturn(CMD_DNS1,true, false);
-            CommandUtility.ExecuteNoReturn(CMD_DNS2, true, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS1,false, false);
+            CommandUtility.ExecuteNoReturn(CMD_DNS2, false, false);
             Log.i(TAG, "Running dnsmasq...");
-            CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, true, true);
+            CommandUtility.ExecuteNoReturn(CMD_DNSMASQ, false, true);
         }
         catch(Exception e){e.printStackTrace();}
     }
@@ -404,7 +404,7 @@ public class FunctionsMain {
 
         try{
             if(new File(BTPAN_DNSMASQ_PID_FILE).exists()) {
-                CommandUtility.ExecuteNoReturn(CMD_KILL_DNSMASQ, true, false);
+                CommandUtility.ExecuteNoReturn(CMD_KILL_DNSMASQ, false, false);
                 Log.i(TAG, "Killing dnsmasq...");
             }
         }
