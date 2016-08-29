@@ -11,6 +11,8 @@
     <string name="bln_title">BLN</string>
     <string name="blnblink_title">BLN: Blink!</string>
     <string name="otg_title">USB host mode</string>
+    <string name="audio_header">AUDIO</string>
+    <string name="spk2rcv_title">Audio to Earpiece</string>
     <string name="rdm_wlan_mac_title">Wifi: Randomize MAC</string>
     <string name="network_header">NETWORKING</string>
     <string name="googledns_title">Google DNS</string>
@@ -47,6 +49,11 @@
     <string name="otg_desc">Allows you to connect usb drives. This only works once per boot, which
 	means that once enabled, you can connected a drive as many times as you like. MTP and ADB are
 	disabled. Once disabled, MTP and ADB work again but this can not be re-enabled until you reboot.
+	</string>
+    <string name="spk2rcv_desc">This options routes media audio that would normally come out of the
+	speakers in the back, to the earpiece in the top front center. For some apps, a reboot may be required
+	before this comes into effect. For others, perhaps only a pause or just a restart of the app is needed.
+	This device is not a phone, yet we have an earpiece... This is the way to use it.
 	</string>
     <string name="rdm_wlan_mac_desc">This will change your WIFI\'s MAC address to a random address.
     WIFI will be disabled, a new MAC set and the WIFI re-enabled.</string>

@@ -25,9 +25,10 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    TextView kernel,networking,workarounds,performance,charger,debugging; /* Headers */
+    TextView kernel, audio,networking,workarounds,performance,charger,debugging; /* Headers */
 
     Switch venturi_variant, sweep2wake, doubletap2wake, bln, blnblink, otg, /* Kernel */
+	    spk2rcv, /* audio */
             googledns, rdm_wlan_mac, /* Networking */
             clockfreeze, incallaudio, bttether, h264softdec, /* Workarounds */
             cpu2, LMKNKP, /* Performance */
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_venturi_variant, whatis_sweep2wake, whatis_doubletap2wake, whatis_bln, whatis_blnblink, whatis_otg, /* Kernel */
+	    whatis_spk2rcv, /* audio */
             whatis_googledns, whatis_rdm_wlan_mac,/* Networking */
             whatis_clockfreeze, whatis_incallaudio, whatis_bttether, whatis_h264softdec, /* Workarounds */
             whatis_cpu2, whatis_LMKNKP, /* Performance */
@@ -42,6 +44,7 @@ public class MainActivity extends Activity {
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout venturi_variant_layout, sweep2wake_layout, doubletap2wake_layout, bln_layout, blnblink_layout, otg_layout, /* Kernel */
+	    spk2rcv_layout, /* audio */
             googledns_layout, rdm_wlan_mac_layout,/* Networking */
             clockfreeze_layout, incallaudio_layout, bttether_layout, h264softdec_layout, /* Workarounds */
             cpu2_layout, LMKNKP_layout, /* Performance */
@@ -49,6 +52,7 @@ public class MainActivity extends Activity {
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
 
     SharedPreferences sharedPref;
+    String device =  "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,7 @@ public class MainActivity extends Activity {
 
         /* Headers */
         kernel = (TextView) findViewById(R.id.kernel_textview);
+	audio = (TextView) findViewById(R.id.audio_textview);
         networking = (TextView) findViewById(R.id.network_textview);
         workarounds = (TextView) findViewById(R.id.workarounds_texview);
         performance = (TextView) findViewById(R.id.performance_textview);
@@ -70,6 +75,7 @@ public class MainActivity extends Activity {
         bln = (Switch) findViewById((R.id.switch_bln));
         blnblink = (Switch) findViewById((R.id.switch_blnblink));
         otg = (Switch) findViewById((R.id.switch_otg));
+	spk2rcv = (Switch) findViewById((R.id.switch_spk2rcv));
         rdm_wlan_mac = (Switch)findViewById((R.id.switch_rdm_wlan_mac));
         googledns = (Switch) findViewById(R.id.switch_googledns);
         clockfreeze = (Switch) findViewById(R.id.switch_clockfreeze);
@@ -92,6 +98,7 @@ public class MainActivity extends Activity {
         blnblink.setOnCheckedChangeListener(switchListener);
         otg.setOnCheckedChangeListener(switchListener);
         googledns.setOnCheckedChangeListener(switchListener);
+        spk2rcv.setOnCheckedChangeListener(switchListener);
         rdm_wlan_mac.setOnCheckedChangeListener(switchListener);
         clockfreeze.setOnCheckedChangeListener(switchListener);
         incallaudio.setOnCheckedChangeListener(switchListener);
@@ -122,6 +129,9 @@ public class MainActivity extends Activity {
         
 	whatis_otg = (ImageView) findViewById(R.id.whatis_otg);
         whatis_otg.setOnClickListener(switchClickListener);
+
+	whatis_spk2rcv = (ImageView) findViewById(R.id.whatis_spk2rcv);
+        whatis_spk2rcv.setOnClickListener(switchClickListener);
 
         whatis_googledns = (ImageView) findViewById(R.id.whatis_googledns);
         whatis_googledns.setOnClickListener(switchClickListener);
@@ -169,6 +179,8 @@ public class MainActivity extends Activity {
         doubletap2wake_layout = (LinearLayout) findViewById(R.id.doubletap2wake_layout);
         bln_layout = (LinearLayout) findViewById(R.id.bln_layout);
         blnblink_layout = (LinearLayout) findViewById(R.id.blnblink_layout);
+	otg_layout = (LinearLayout) findViewById(R.id.otg_layout);
+	spk2rcv_layout = (LinearLayout) findViewById(R.id.spk2rcv_layout);
         rdm_wlan_mac_layout = (LinearLayout) findViewById(R.id.rdm_wlan_mac_layout);
         googledns_layout = (LinearLayout) findViewById(R.id.googledns_layout);
         clockfreeze_layout = (LinearLayout) findViewById(R.id.clockfreeze_layout);
@@ -181,8 +193,7 @@ public class MainActivity extends Activity {
         LMKNKP_layout = (LinearLayout) findViewById(R.id.LMKNKP_layout);
 
         prepareUI();
-
-        String device =  "";
+ 
         try {
             device = SystemProperties.get("ro.build.product");
             //device = CommandUtility.ExecuteShellCommandTrimmed("getprop ro.build.product", true, false);
@@ -199,7 +210,9 @@ public class MainActivity extends Activity {
             incallaudio_layout.setVisibility(View.GONE);
             /*h264softdec_layout.setVisibility(View.GONE);*/
 
-            performance.setVisibility(View.GONE);
+            rdm_wlan_mac_layout.setVisibility(View.GONE);
+	    otg_layout.setVisibility(View.GONE);
+	    performance.setVisibility(View.GONE);
             cpu2_layout.setVisibility(View.GONE);
             LMKNKP_layout.setVisibility(View.GONE);
         }
@@ -224,14 +237,17 @@ public class MainActivity extends Activity {
         else if(device.equals("codinamtr") || device.equals("codinavid") || device.equals("codinatmo")) {
 
             venturi_variant_layout.setVisibility(View.GONE);
+	    audio.setVisibility(View.GONE);
+	    spk2rcv_layout.setVisibility(View.GONE);
         }
 
     }
 
     private void prepareUI(){
-
-        String varcode = FunctionsMain.getVenturiVariantCode();
-        venturi_variant.setChecked(varcode.equals("XAA") || varcode.equals("XAC"));
+	if(device.equals("venturi")) {
+            String varcode = FunctionsMain.getVenturiVariantCode();
+            venturi_variant.setChecked(varcode.equals("XAA") || varcode.equals("XAC"));
+	}
         doubletap2wake.setChecked(sharedPref.getBoolean("doubletap2wake", getResources().getBoolean(R.bool.doubletap2wake_default_enabled)));
         sweep2wake.setChecked(sharedPref.getBoolean("sweep2wake", getResources().getBoolean(R.bool.sweep2wake_default_enabled)));
         bln.setChecked(sharedPref.getBoolean("bln", getResources().getBoolean(R.bool.bln_default_enabled)));
@@ -252,6 +268,8 @@ public class MainActivity extends Activity {
 	    otg.setChecked(true);
 	else
 	    otg.setChecked(false);
+
+	spk2rcv.setChecked(SystemProperties.getBoolean("persist.sys.audio.spk2rcv", false));
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -278,6 +296,9 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == whatis_otg){
                 ShowDialog("USB Host Mode",getString(R.string.otg_desc));
+            }
+            else if(thisSwitch == whatis_spk2rcv){
+                ShowDialog("Audio To Earpiece",getString(R.string.spk2rcv_desc));
             }
             else if(thisSwitch == whatis_rdm_wlan_mac){
                 ShowDialog("Random WLAN MAC:",getString(R.string.rdm_wlan_mac_desc));
@@ -379,6 +400,12 @@ public class MainActivity extends Activity {
                 }
                 catch(Exception e){e.printStackTrace();}
 	    }
+            else if(thisSwitch == spk2rcv){
+                if(b)
+                    SystemProperties.set("persist.sys.audio.spk2rcv", "1");
+		else
+		    SystemProperties.set("persist.sys.audio.spk2rcv", "0");
+            }
             else if(thisSwitch == rdm_wlan_mac) {
 
 	    AsyncTask at = new AsyncTask() {
