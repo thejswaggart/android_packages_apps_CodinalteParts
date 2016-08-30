@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.meticulus.codinalteparts.app.Sponsors">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        style="@android:style/Holo.Light.SegmentedButton">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:drawable/dialog_holo_dark_frame">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/avatar"
+                    android:padding="5dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/development_name"
+                        android:id="@+id/textView"
+                        android:typeface="monospace"
+                        android:padding="5dp"
+                        android:textSize="15dp"
+			android:textColor="#FFFFFF"
+                        android:gravity="center_vertical|center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/sponsor_section"
+                        android:id="@+id/textView2"
+			android:textColor="#FFFFFF"
+                        android:typeface="monospace"
+                        android:textStyle="bold|italic"
+                        android:gravity="center_vertical|center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/sponsor_thank_you"
+                        android:id="@+id/textView3"
+                        android:typeface="monospace"
+                        android:padding="5dp"
+                        android:textStyle="italic"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+

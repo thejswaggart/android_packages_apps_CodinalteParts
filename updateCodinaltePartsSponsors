@@ -1,0 +1,56 @@
+#!/bin/bash
+
+IFS=''
+SPONSORSXML="<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+SPONSORS_ACTIVITYXML=""
+
+PATHTOSPONSORSXML="res/values/sponsors.xml"
+PATHTOSPONSORS_ACTIVITYXML="res/layout/activity_sponsors.xml"
+PATHTOPAYPALCSV="Download.csv"
+
+while read LINE
+do
+	if [[ "$LINE" == "" ]]; then
+		continue
+	fi
+	SPONSORSXML="$SPONSORSXML\n$LINE"
+done < sponsors.header
+
+SPONSORSXML="$SPONSORSXML\n"
+
+while read LINE
+do
+	SPONSORS_ACTIVITYXML="$SPONSORS_ACTIVITYXML\n$LINE"
+done < activity_sponsors.header
+
+while read LINE
+do
+	LINE=$(echo $LINE |iconv -c)
+	NAME=$( echo $LINE | cut -d ',' -f2)
+	##NAME="$( echo $NAME | head -c 1) $(echo $NAME | cut -d ' ' -f2)"
+	NAME="$( echo $NAME | cut -d ' ' -f1) $(echo $NAME | cut -d ' ' -f2)"
+	NAME="$(echo $NAME | sed "s/'/\\\'/g")"
+	AMOUNT=$( echo $LINE | cut -d ',' -f1)
+	NAMEVAR=$( echo $LINE | cut -d ',' -f3)
+	NAMEVAR="$(echo $NAMEVAR | head -c 1)"_"$( echo $NAMEVAR | cut -d '_' -f2)_$RANDOM"
+	SPONSORSXML="$SPONSORSXML    <string name=\"$NAMEVAR\">$NAME</string>\n"
+
+	SPONSORS_ACTIVITYXML="$SPONSORS_ACTIVITYXML $(sed "s/#VARNAME#/$NAMEVAR/g" < activity_sponsors.entry)\n"
+
+done <<< "$(./processDonations $PATHTOPAYPALCSV | sort -nr)"
+
+while read LINE
+do
+	SPONSORSXML="$SPONSORSXML\n$LINE"
+done < sponsors.footer
+
+while read LINE
+do
+	SPONSORS_ACTIVITYXML="$SPONSORS_ACTIVITYXML\n$LINE"
+done < activity_sponsors.footer
+
+#echo -e $SPONSORSXML
+#echo -e $SPONSORS_ACTIVITYXML
+
+echo -e $SPONSORSXML > $PATHTOSPONSORSXML
+echo -e $SPONSORS_ACTIVITYXML > $PATHTOSPONSORS_ACTIVITYXML
