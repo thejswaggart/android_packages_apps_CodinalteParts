@@ -18,55 +18,6 @@ public class bootreceiver extends BroadcastReceiver  {
     public void onReceive(Context arg0, Intent arg1)
     {
         sharedPref = PreferenceManager.getDefaultSharedPreferences(arg0.getApplicationContext());
-        //If incallaudio is selected that start service at boot.
-        if(sharedPref.getBoolean("incallaudio", arg0.getResources().getBoolean(R.bool.incallaudio_default_enabled)))
-        {
-            FunctionsMain.startInCallAudioService(arg0.getApplicationContext());
-        }
-        //If clockfreeze is selected that start service at boot.
-        if(sharedPref.getBoolean("clockfreeze", arg0.getResources().getBoolean(R.bool.clockfreeze_default_enabled)))
-        {
-            FunctionsMain.startClockFreezeMonitorService(arg0.getApplicationContext());
-        }
-        //If doubletap2wake is selected that start service at boot.
-        if(sharedPref.getBoolean("doubletap2wake", arg0.getResources().getBoolean(R.bool.doubletap2wake_default_enabled)))
-        {
-            FunctionsMain.setDoubleTap2Wake(true);
-        }
-        //If sweep2wake is selected that start service at boot.
-        if(sharedPref.getBoolean("sweep2wake", arg0.getResources().getBoolean(R.bool.sweep2wake_default_enabled)))
-        {
-            FunctionsMain.setSweep2Wake(true);
-        }
-
-        if(sharedPref.getBoolean("h264softdec", arg0.getResources().getBoolean(R.bool.h264softdec_default_enabled)))
-        {
-            FunctionsMain.setH264SoftDec(true);
-        }
-
-        if(sharedPref.getBoolean("bln", arg0.getResources().getBoolean(R.bool.bln_default_enabled)))
-        {
-            FunctionsMain.setBLN(true);
-        }
-        if(sharedPref.getBoolean("blnblink", arg0.getResources().getBoolean(R.bool.blnblink_default_enabled)))
-        {
-            FunctionsMain.setBLNBlink(true);
-        }
-
-        if(sharedPref.getBoolean("googledns", arg0.getResources().getBoolean(R.bool.googledns_default_enabled)))
-        {
-            FunctionsMain.setGoogleDNS(arg0,true);
-        }
-
-        //Set cpu2 on or off
-        //Setting it on if it's already on should make no difference.
-        FunctionsMain.SetCPU2(sharedPref.getBoolean("cpu2",true));
-
-        if(sharedPref.getBoolean("LKMNKP", arg0.getResources().getBoolean(R.bool.LMKNKP_default_enabled)))
-        {
-            FunctionsMain.enableLMKNKP();
-            FunctionsMain.setLMKNKPWhitelist();;
-        }
 
         if(sharedPref.getBoolean("autologcat", false))
             FunctionsMain.startAutologcat();

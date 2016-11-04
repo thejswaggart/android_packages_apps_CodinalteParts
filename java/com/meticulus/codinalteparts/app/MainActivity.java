@@ -102,11 +102,7 @@ public class MainActivity extends Activity {
         autologcat.setChecked(sharedPref.getBoolean("autologcat",false));
         autokmsg.setChecked(sharedPref.getBoolean("autokmsg",false));
         autoril.setChecked(sharedPref.getBoolean("autoril",false));
-	if(FunctionsMain.read_usb_reset() == 1)
-	    otg.setChecked(true);
-	else
-	    otg.setChecked(false);
-
+	otg.setChecked(FunctionsMain.usb_host_mode_is_on());
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -141,15 +137,9 @@ public class MainActivity extends Activity {
 
             Switch thisSwitch = (Switch)compoundButton;
             SharedPreferences.Editor editor = sharedPref.edit();
-            if(thisSwitch == otg) { 
-                try {
-		    if(FunctionsMain.read_usb_reset() < 2)
+            if(thisSwitch == otg) {
+		try { 
                     	FunctionsMain.set_otg(b);
-		    else {
-			ShowDialog("Reboot Required","You'll need to reboot before using this again");
-		    	otg.setChecked(false);
-			otg.setEnabled(false);
-		    }
                 }
                 catch(Exception e){e.printStackTrace();}
 	    }
