@@ -4,26 +4,9 @@
     <string name="development_name">Meticulus Development</string>
     <string name="extras_section_name">Extras</string>
     <string name="app_name">Codinalte Parts</string>
-    <string name="kernel_header">KERNEL</string>
-    <string name="venturi_variant_title">USA Variant</string>
-    <string name="doubletap2wake_title">DoubleTap2Wake</string>
-    <string name="sweep2wake_title">Sweep2Wake</string>
-    <string name="bln_title">BLN</string>
-    <string name="blnblink_title">BLN: Blink!</string>
-    <string name="otg_title">USB host mode</string>
-    <string name="audio_header">AUDIO</string>
-    <string name="spk2rcv_title">Audio to Earpiece</string>
-    <string name="rdm_wlan_mac_title">Wifi: Randomize MAC</string>
+    <string name="kernel_header">KERNEL</string> 
+    <string name="otg_title">USB host mode</string> 
     <string name="network_header">NETWORKING</string>
-    <string name="googledns_title">Google DNS</string>
-    <string name="workarounds_header">WORKAROUNDS</string>
-    <string name="clockfreeze_title">Clock Freeze Monitor</string>
-    <string name="incallaudio_title">In-Call Audio</string>
-    <string name="bttether_title">BT Tether</string>
-    <string name="h264softdec_title">H.264 SoftDec</string>
-    <string name="performance_header">PERFORMANCE</string>
-    <string name="CPU2_title">CPU2</string>
-    <string name="LMKNKP_title">Low Memory Killer\nNot Killable Procs</string>
     <string name="charger_header">OFFLINE CHARGER</string>
     <string name="charger_showdatetime_title">Date and Time</string>
     <string name="charger_nosuspend_title">Don\'t Suspend</string>
@@ -32,58 +15,13 @@
     <string name="autokmsg_title">Auto kmsg</string>
     <string name="autoril_title">Auto RIL log</string>
     <string name="action_settings">Settings</string>
-    <string name="venturi_variant_desc">If you have the USA or Canadian version of the YP-G70 then
-    this should be on, otherwise it should be off.\n\nXAA and XAC are USA and Canadian with
-    capacitive home button. All other codes are INT with the physical home button.\n\n You will have
-    problems with you buttons if this is not set correctly.\n\nReboot required after switching.
-    </string>
-    <string name="doubletap2wake_desc">Allows you to double tap on the screen to wake up the device.
-    Note: does not work in deep sleep unless a wakelock is used.</string>
-    <string name="sweep2wake_desc">Allows you to swipe the screen, left to right,
-    to wake up the device. Note: does not work in deep sleep unless a wakelock is
-    used.</string>
-    <string name="bln_desc">When you receive a notification and the screen is off the
-        back-light on your capacitive buttons will illuminate. The button back-light will
-        return to normal behavior after you wake the device.</string>
-    <string name="blnblink_desc">Causes the button-backlights to blink when BLN is enabled.</string>
     <string name="otg_desc">Allows you to connect usb drives. This only works once per boot, which
 	means that once enabled, you can connected a drive as many times as you like. MTP and ADB are
 	disabled. Once disabled, MTP and ADB work again but this can not be re-enabled until you reboot.
 	</string>
-    <string name="spk2rcv_desc">This options routes media audio that would normally come out of the
-	speakers in the back, to the earpiece in the top front center. For some apps, a reboot may be required
-	before this comes into effect. For others, perhaps only a pause or just a restart of the app is needed.
-	This device is not a phone, yet we have an earpiece... This is the way to use it.
-	</string>
-    <string name="rdm_wlan_mac_desc">This will change your WIFI\'s MAC address to a random address.
-    WIFI will be disabled, a new MAC set and the WIFI re-enabled.</string>
-    <string name="googledns_desc">Uses dnsmasq to force the use of Google\'s DNS servers
-        instead of whatever is assigned by DHCP. Only known to work with Wifi.\n\nNOTE: Disable this
-        if this device is used as a tethering "server"!</string>
-    <string name="clockfreeze_desc">If the status bar clock get stuck enable this.
-    WARNING: Do not depend on this to fix the alarm clock. NOTE: Experimental for now.</string>
-    <string name="incallaudio_desc">The In-Call Audio Service runs in the background
-    and when you are on a call. It resets the volume to workaround the low-in-call volume
-    problem. It also detects if you switch to speaker phone and resets the volume for that
-    stream as well.</string>
-    <string name="bttether_desc">The BT Tether workaround detects when your connected to
-    a Tethering "server" and runs dhcp on the bt-pan interface and also runs dnsmasq
-    for you automatically; effectively fixing bluetooth tethering.</string>
-    <string name="h264softdec_desc">This option forces the use of the Google software decoder
-    for H.264 video. This fixes issues in the latest release of the official Youtube app. However
-    the switch is system wide and the Google software decoder does not work well when watching
-    HD video such as video captured from the camera app.\n\nBasically: Enable to fix Youtube. Disable
-    for HD video.</string>
     <string name="charger_showdatetime_desc">Displays the date and time on the offline charging
     screen.</string>
     <string name="charger_nosuspend_desc">Keeps the offline charging screen on.</string>
-    <string name="cpu2_desc">I am not sure what benefits this has but this allows you
-    to disable the secondary cpu. It is possible that this may save battery life.
-    Note: I have noticed that disabling it sometimes causes the min and max scaling
-    frequency to both be set at 1000 mhz???(Experimental)</string>
-    <string name="LMKNKP_desc">Low Memory Killer - Not Killable Processes: allows
-    you to set a white list of processes in the LMK. LMK will not kill these
-    processes when more memory is needed unless it is absolutely neccessary.</string>
     <string name="autologcat_desc">Auto logcat enables automatic dumping of the log
     to a file in the root of the sdcard. Does not clean up after itself. Should
     probably keep this off unless I ask you to turn it on.</string>
@@ -93,8 +31,6 @@
     <string name="autorillog_desc">Auto ril log enables automatic dumping of the Radio log
     to a file in the root of the sdcard. Does not clean up after itself. Should
     probably keep this off unless I ask you to turn it on.</string>
-    <string name="title_activity_test">TestActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_sposnsors">Sposnsors</string>
 
 </resources>
