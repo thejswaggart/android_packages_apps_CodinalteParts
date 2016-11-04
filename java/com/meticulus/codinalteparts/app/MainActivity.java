@@ -25,17 +25,20 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    TextView kernel, audio, charger, networking, debugging; /* Headers */
+    TextView kernel, audio, charger, network, debugging; /* Headers */
 
     Switch otg, /* Kernel */
+	    sim2, /* Networking */
             charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_otg, /* Kernel */
+	    whatis_sim2, /* Networking */
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout otg_layout, /* Kernel */
+	    sim2_layout, /* Networking */
             charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
 
@@ -49,11 +52,13 @@ public class MainActivity extends Activity {
 
         /* Headers */
         kernel = (TextView) findViewById(R.id.kernel_textview);
+        network = (TextView) findViewById(R.id.network_textview);
         charger = (TextView) findViewById(R.id.charger_textview);
         debugging = (TextView) findViewById(R.id.debugging_textview);
 
         /* Assign all switches */
-        otg = (Switch) findViewById((R.id.switch_otg)); 
+        otg = (Switch) findViewById((R.id.switch_otg));
+        sim2 = (Switch) findViewById((R.id.switch_sim2));
         charger_show_datetime = (Switch) findViewById(R.id.switch_charger_show_datetime);
         charger_no_suspend = (Switch) findViewById(R.id.switch_charger_no_suspend);
         autologcat = (Switch) findViewById(R.id.switch_autologcat);
@@ -62,6 +67,7 @@ public class MainActivity extends Activity {
 
         /* Assign all switches onCheckChanged*/ 
         otg.setOnCheckedChangeListener(switchListener);
+        sim2.setOnCheckedChangeListener(switchListener);
         charger_show_datetime.setOnCheckedChangeListener(switchListener);
         charger_no_suspend.setOnCheckedChangeListener(switchListener);
         autologcat.setOnCheckedChangeListener(switchListener);
@@ -70,6 +76,9 @@ public class MainActivity extends Activity {
 
 	whatis_otg = (ImageView) findViewById(R.id.whatis_otg);
         whatis_otg.setOnClickListener(switchClickListener);
+
+	whatis_sim2 = (ImageView) findViewById(R.id.whatis_sim2);
+        whatis_sim2.setOnClickListener(switchClickListener);
 
         whatis_charger_show_datetime = (ImageView) findViewById(R.id.what_is_charger_show_datetime);
         whatis_charger_show_datetime.setOnClickListener(switchClickListener);
@@ -103,6 +112,7 @@ public class MainActivity extends Activity {
         autokmsg.setChecked(sharedPref.getBoolean("autokmsg",false));
         autoril.setChecked(sharedPref.getBoolean("autoril",false));
 	otg.setChecked(FunctionsMain.usb_host_mode_is_on());
+	sim2.setChecked(!SystemProperties.get("persist.radio.multisim.config", "single").equals("single"));
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -115,6 +125,9 @@ public class MainActivity extends Activity {
             }
             else if(thisSwitch == whatis_charger_show_datetime){
                 ShowDialog("Date and Time in Charger",getString(R.string.charger_showdatetime_desc));
+            }
+            else if(thisSwitch == whatis_sim2){
+                ShowDialog("SIM 2",getString(R.string.sim2_desc));
             }
             else if(thisSwitch == whatis_charger_no_suspend){
                 ShowDialog("No Suspend in Charger",getString(R.string.charger_nosuspend_desc));
@@ -145,6 +158,13 @@ public class MainActivity extends Activity {
 	    }
             else if(thisSwitch == charger_show_datetime){
                 FunctionsMain.setChargerShowDateTime(b);
+            }
+            else if(thisSwitch == sim2){
+		if(b)
+                    SystemProperties.set("persist.radio.multisim.config","dsds");
+		else
+                    SystemProperties.set("persist.radio.multisim.config","single");
+
             }
             else if(thisSwitch == charger_no_suspend){
                 FunctionsMain.setChargerNoSuspend(b);
