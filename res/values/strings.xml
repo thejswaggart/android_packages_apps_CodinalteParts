@@ -7,6 +7,7 @@
     <string name="kernel_header">KERNEL</string> 
     <string name="otg_title">USB HOST</string>
     <string name="sim2_title">SIM 2</string>
+    <string name="glove_title">TS: Glove Mode</string>
     <string name="network_header">NETWORKING</string>
     <string name="charger_header">OFFLINE CHARGER</string>
     <string name="charger_showdatetime_title">Date and Time</string>
@@ -19,6 +20,9 @@
     <string name="otg_desc">Allows you to connect usb drives. When activated other device related
 	USB functions, such as adb and mtp, will not be available until this is disabled or the
 	device is rebooted.
+	</string>
+    <string name="glove_desc">Enables "glove" mode on the touchscreen. Apparently increases the
+	sensativity of the touch screen so touches can be registered while wearing gloves?
 	</string>
     <string name="sim2_desc">Enables the second sim. This should not be activated unless there is
 	a sim card in the second slot.</string>

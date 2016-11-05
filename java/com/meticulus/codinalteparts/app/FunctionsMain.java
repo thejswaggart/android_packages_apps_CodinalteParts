@@ -123,6 +123,28 @@ public class FunctionsMain {
         catch(Exception e){e.printStackTrace();}
     }
 
+    public static boolean glove_mode_is_on() {
+       String result = "";
+       try {
+           result = CommandUtility.ExecuteShellCommandTrimmed("cat /sys/devices/platform/huawei_touch/touch_glove",false,false);
+
+       } catch(Exception e) {e.printStackTrace();}
+       Log.i(TAG,"Glove mode is" + result);
+       return result.equals("1");
+    }
+
+    public static void set_glove(boolean on) {
+	try {
+	    if(on) {
+		Log.i(TAG, "Setting Glove Mode ON");
+	        CommandUtility.ExecuteNoReturn("echo 1 > /sys/devices/platform/huawei_touch/touch_glove", false, false);
+	    } else {
+		Log.i(TAG, "Settings Glove Mode OFF");
+	        CommandUtility.ExecuteNoReturn("echo 0 > /sys/devices/platform/huawei_touch/touch_glove", false, false); 
+	    }
+        } catch(Exception e){e.printStackTrace();}
+    }
+
     public static boolean usb_host_mode_is_on() {
        String result = "";
        try {

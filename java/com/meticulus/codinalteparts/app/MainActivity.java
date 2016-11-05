@@ -27,17 +27,17 @@ public class MainActivity extends Activity {
 
     TextView kernel, audio, charger, network, debugging; /* Headers */
 
-    Switch otg, /* Kernel */
+    Switch otg, glove, /* Kernel */
 	    sim2, /* Networking */
             charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
-    ImageView whatis_otg, /* Kernel */
+    ImageView whatis_otg, whatis_glove, /* Kernel */
 	    whatis_sim2, /* Networking */
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
-    LinearLayout otg_layout, /* Kernel */
+    LinearLayout otg_layout, glove_layout /* Kernel */
 	    sim2_layout, /* Networking */
             charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
         debugging = (TextView) findViewById(R.id.debugging_textview);
 
         /* Assign all switches */
+        glove = (Switch) findViewById((R.id.switch_glove));
         otg = (Switch) findViewById((R.id.switch_otg));
         sim2 = (Switch) findViewById((R.id.switch_sim2));
         charger_show_datetime = (Switch) findViewById(R.id.switch_charger_show_datetime);
@@ -66,6 +67,7 @@ public class MainActivity extends Activity {
         autoril = (Switch)findViewById(R.id.switch_autorillog);
 
         /* Assign all switches onCheckChanged*/ 
+        gove.setOnCheckedChangeListener(switchListener);
         otg.setOnCheckedChangeListener(switchListener);
         sim2.setOnCheckedChangeListener(switchListener);
         charger_show_datetime.setOnCheckedChangeListener(switchListener);
@@ -73,6 +75,9 @@ public class MainActivity extends Activity {
         autologcat.setOnCheckedChangeListener(switchListener);
         autokmsg.setOnCheckedChangeListener(switchListener);
         autoril.setOnCheckedChangeListener(switchListener);
+
+	whatis_glove = (ImageView) findViewById(R.id.whatis_glove);
+        whatis_glove.setOnClickListener(switchClickListener);
 
 	whatis_otg = (ImageView) findViewById(R.id.whatis_otg);
         whatis_otg.setOnClickListener(switchClickListener);
@@ -97,10 +102,6 @@ public class MainActivity extends Activity {
 
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
  
-	otg_layout = (LinearLayout) findViewById(R.id.otg_layout);
-        charger_show_datetime_layout = (LinearLayout) findViewById(R.id.charger_show_datetime_layout);
-        charger_no_suspend_layout = (LinearLayout) findViewById(R.id.charger_no_suspend_layout); 
-
         prepareUI();
  
     }
@@ -113,6 +114,7 @@ public class MainActivity extends Activity {
         autoril.setChecked(sharedPref.getBoolean("autoril",false));
 	otg.setChecked(FunctionsMain.usb_host_mode_is_on());
 	sim2.setChecked(!SystemProperties.get("persist.radio.multisim.config", "single").equals("single"));
+	glove.setChecked(FunctionsMain.glove_mode_is_on());
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -122,6 +124,9 @@ public class MainActivity extends Activity {
             ImageView thisSwitch = (ImageView)view;
             if(thisSwitch == whatis_otg){
                 ShowDialog("USB Host Mode",getString(R.string.otg_desc));
+            }
+            else if(thisSwitch == whatis_charger_show_datetime){
+                ShowDialog("Touchscreen: Glove Mode",getString(R.string.charger_showdatetime_desc));
             }
             else if(thisSwitch == whatis_charger_show_datetime){
                 ShowDialog("Date and Time in Charger",getString(R.string.charger_showdatetime_desc));
@@ -153,6 +158,12 @@ public class MainActivity extends Activity {
             if(thisSwitch == otg) {
 		try { 
                     	FunctionsMain.set_otg(b);
+                }
+                catch(Exception e){e.printStackTrace();}
+	    }
+            else if(thisSwitch == glove) {
+		try { 
+                    	FunctionsMain.set_glove(b);
                 }
                 catch(Exception e){e.printStackTrace();}
 	    }
