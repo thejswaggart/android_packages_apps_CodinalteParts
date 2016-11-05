@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
-    LinearLayout otg_layout, glove_layout /* Kernel */
+    LinearLayout otg_layout, glove_layout, /* Kernel */
 	    sim2_layout, /* Networking */
             charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
         autoril = (Switch)findViewById(R.id.switch_autorillog);
 
         /* Assign all switches onCheckChanged*/ 
-        gove.setOnCheckedChangeListener(switchListener);
+        glove.setOnCheckedChangeListener(switchListener);
         otg.setOnCheckedChangeListener(switchListener);
         sim2.setOnCheckedChangeListener(switchListener);
         charger_show_datetime.setOnCheckedChangeListener(switchListener);
@@ -125,8 +125,8 @@ public class MainActivity extends Activity {
             if(thisSwitch == whatis_otg){
                 ShowDialog("USB Host Mode",getString(R.string.otg_desc));
             }
-            else if(thisSwitch == whatis_charger_show_datetime){
-                ShowDialog("Touchscreen: Glove Mode",getString(R.string.charger_showdatetime_desc));
+            else if(thisSwitch == whatis_glove){
+                ShowDialog("Touchscreen: Glove Mode",getString(R.string.glove_desc));
             }
             else if(thisSwitch == whatis_charger_show_datetime){
                 ShowDialog("Date and Time in Charger",getString(R.string.charger_showdatetime_desc));
