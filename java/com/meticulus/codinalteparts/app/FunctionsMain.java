@@ -26,7 +26,7 @@ public class FunctionsMain {
 
     /* Offline Charging */
 
-    private static final String CHARGER_SETTINGS_PATH = "/data/misc/charger";
+    private static final String CHARGER_SETTINGS_PATH = "/cache/misc/charger";
 
     private static final String CHARGER_SHOWDATETIME_PATH = CHARGER_SETTINGS_PATH + "/charger_show_datetime";
 
