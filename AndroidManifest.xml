@@ -23,35 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <receiver android:name="com.meticulus.codinalteparts.app.bootreceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver>
-        <receiver android:name="com.meticulus.codinalteparts.app.bluetoothreceiver" >
-            <intent-filter>
-                <action android:name="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED" />
-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.meticulus.codinalteparts.app.wifireceiver" >
-            <intent-filter>
-                <action android:name="android.net.wifi.STATE_CHANGE" />
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name="com.meticulus.codinalteparts.app.InCallAudioService"
-            android:enabled="true"
-            android:exported="true" >
-        </service>
-        <service
-            android:name="com.meticulus.codinalteparts.app.ClockFreezeMonitor"
-            android:enabled="true"
-            android:exported="true" >
-        </service>
-
+        </receiver> 
         <activity
             android:name=".Sponsors"
             android:label="@string/title_activity_sposnsors" >
