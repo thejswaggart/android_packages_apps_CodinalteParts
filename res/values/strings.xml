@@ -10,6 +10,8 @@
     <string name="glove_title">TS: Glove Mode</string>
     <string name="network_header">NETWORKING</string>
     <string name="charger_header">OFFLINE CHARGER</string>
+    <string name="workaround_header">WORKAROUNDS</string>
+    <string name="google_enc_title">Use Google H264</string>
     <string name="charger_showdatetime_title">Date and Time</string>
     <string name="charger_nosuspend_title">Don\'t Suspend</string>
     <string name="debugging_header">DEBUGGING</string>
@@ -26,6 +28,9 @@
 	</string>
     <string name="sim2_desc">Enables the second sim. This should not be activated unless there is
 	a sim card in the second slot.</string>
+    <string name="google_enc_desc">This works around issues with Snapchat, Instagram and other video recording apps. 
+	Uses the google avc encoder instead of the hw avc encoder. You may need to restart the app or restart the device
+	before this setting takes effect. This may also cause some video recording apps not to work.</string>
     <string name="charger_showdatetime_desc">Displays the date and time on the offline charging
     screen.</string>
     <string name="charger_nosuspend_desc">Keeps the offline charging screen on.</string>

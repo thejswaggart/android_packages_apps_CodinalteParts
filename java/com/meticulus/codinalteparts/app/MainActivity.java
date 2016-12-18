@@ -25,20 +25,23 @@ import com.meticulus.codinalteparts.app.FunctionsMain;
 
 public class MainActivity extends Activity {
 
-    TextView kernel, audio, charger, network, debugging; /* Headers */
+    TextView kernel, audio, charger,workaround, network, debugging; /* Headers */
 
     Switch otg, glove, /* Kernel */
 	    sim2, /* Networking */
+	    google_enc, /* Workarounds */
             charger_show_datetime, charger_no_suspend, /* Charger */
             autologcat, autokmsg, autoril; /* Debugging */
 
     ImageView whatis_otg, whatis_glove, /* Kernel */
 	    whatis_sim2, /* Networking */
+	    whatis_google_enc, /* Workarounds */
             whatis_charger_show_datetime, whatis_charger_no_suspend, /* Charger */
             whatis_autologcat,whatis_autokmsg, whatis_autorillog; /* Debugging */
 
     LinearLayout otg_layout, glove_layout, /* Kernel */
 	    sim2_layout, /* Networking */
+	    google_enc_layout, /* Workarounds */
             charger_show_datetime_layout, charger_no_suspend_layout, /* Charger */
             autologcat_layout, autokmsg_layout, autoril_layout; /* Debugging */
 
@@ -54,12 +57,14 @@ public class MainActivity extends Activity {
         kernel = (TextView) findViewById(R.id.kernel_textview);
         network = (TextView) findViewById(R.id.network_textview);
         charger = (TextView) findViewById(R.id.charger_textview);
+        workaround  = (TextView) findViewById(R.id.workaround_textview);
         debugging = (TextView) findViewById(R.id.debugging_textview);
 
         /* Assign all switches */
         glove = (Switch) findViewById((R.id.switch_glove));
         otg = (Switch) findViewById((R.id.switch_otg));
         sim2 = (Switch) findViewById((R.id.switch_sim2));
+        google_enc = (Switch) findViewById((R.id.switch_google_enc));
         charger_show_datetime = (Switch) findViewById(R.id.switch_charger_show_datetime);
         charger_no_suspend = (Switch) findViewById(R.id.switch_charger_no_suspend);
         autologcat = (Switch) findViewById(R.id.switch_autologcat);
@@ -70,6 +75,7 @@ public class MainActivity extends Activity {
         glove.setOnCheckedChangeListener(switchListener);
         otg.setOnCheckedChangeListener(switchListener);
         sim2.setOnCheckedChangeListener(switchListener);
+        google_enc.setOnCheckedChangeListener(switchListener);
         charger_show_datetime.setOnCheckedChangeListener(switchListener);
         charger_no_suspend.setOnCheckedChangeListener(switchListener);
         autologcat.setOnCheckedChangeListener(switchListener);
@@ -84,6 +90,9 @@ public class MainActivity extends Activity {
 
 	whatis_sim2 = (ImageView) findViewById(R.id.whatis_sim2);
         whatis_sim2.setOnClickListener(switchClickListener);
+
+	whatis_google_enc = (ImageView) findViewById(R.id.whatis_google_enc);
+        whatis_google_enc.setOnClickListener(switchClickListener);
 
         whatis_charger_show_datetime = (ImageView) findViewById(R.id.what_is_charger_show_datetime);
         whatis_charger_show_datetime.setOnClickListener(switchClickListener);
@@ -115,6 +124,7 @@ public class MainActivity extends Activity {
 	otg.setChecked(FunctionsMain.usb_host_mode_is_on());
 	sim2.setChecked(!SystemProperties.get("persist.radio.multisim.config", "single").equals("single"));
 	glove.setChecked(FunctionsMain.glove_mode_is_on());
+	google_enc.setChecked(SystemProperties.getBoolean("persist.sys.google_avc_enc",false));
     }
 
     private View.OnClickListener switchClickListener = new View.OnClickListener() {
@@ -124,6 +134,9 @@ public class MainActivity extends Activity {
             ImageView thisSwitch = (ImageView)view;
             if(thisSwitch == whatis_otg){
                 ShowDialog("USB Host Mode",getString(R.string.otg_desc));
+            }
+            else if(thisSwitch == whatis_google_enc){
+                ShowDialog("Workaround: Google Encoder",getString(R.string.google_enc_desc));
             }
             else if(thisSwitch == whatis_glove){
                 ShowDialog("Touchscreen: Glove Mode",getString(R.string.glove_desc));
@@ -167,6 +180,9 @@ public class MainActivity extends Activity {
                 }
                 catch(Exception e){e.printStackTrace();}
 	    }
+            else if(thisSwitch == google_enc){
+                SystemProperties.set("persist.sys.google_avc_enc",String.valueOf(b));
+            }
             else if(thisSwitch == charger_show_datetime){
                 FunctionsMain.setChargerShowDateTime(b);
             }

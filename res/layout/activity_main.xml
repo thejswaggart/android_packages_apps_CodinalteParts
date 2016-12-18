@@ -222,6 +222,57 @@
             </LinearLayout>
 
             <TextView
+                style="@android:style/TextAppearance.DialogWindowTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/workaround_header"
+                android:id="@+id/workaround_textview"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+		android:textColor="#FFFFFF"
+                android:textSize="10dp"
+                android:background="@android:drawable/dialog_holo_dark_frame"
+                android:gravity="center" /> 
+	    <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:weightSum="1"
+                android:id="@+id/google_enc_layout"
+                android:background="#444444"
+                android:layout_margin="10dp">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/google_enc_title"
+                    android:id="@+id/switch_google_enc"
+                    android:paddingBottom="20dp"
+                    android:checked="false"
+                    android:enabled="true"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:focusableInTouchMode="false"
+                    android:layout_weight="0.99"
+                    android:paddingTop="20dp"
+		    android:textColor="#FFFFFF"
+                    android:typeface="monospace"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/whatis_google_enc"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"
+                    android:baselineAlignBottom="false" />
+            </LinearLayout>
+            <TextView
                 style="@android:style/TextAppearance.DeviceDefault.WindowTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
