@@ -30,6 +30,7 @@ do
 	##NAME="$( echo $NAME | head -c 1) $(echo $NAME | cut -d ' ' -f2)"
 	NAME="$( echo $NAME | cut -d ' ' -f1) $(echo $NAME | cut -d ' ' -f2)"
 	NAME="$(echo $NAME | sed "s/'/\\\'/g")"
+	NAME="$NAME - $( echo $LINE | cut -d ',' -f4)"
 	AMOUNT=$( echo $LINE | cut -d ',' -f1)
 	NAMEVAR=$( echo $LINE | cut -d ',' -f3)
 	NAMEVAR="$(echo $NAMEVAR | head -c 1)"_"$( echo $NAMEVAR | cut -d '_' -f2)_$RANDOM"

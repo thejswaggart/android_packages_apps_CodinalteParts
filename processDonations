@@ -5,7 +5,7 @@ FILE=${1}
 NAMES[0]=""
 STATUSES[0]=""
 GROSSES[0]=0
-
+XDAS[0]=""
 getPosition() {
 #echo "${1}"
 local POS=0
@@ -30,7 +30,10 @@ do
 	if [[ $? -gt 0 ]]; then exit; fi
 	STATUS=$(echo "$LINE" | cut -d ',' -f6 | sed 's/\"//g')
 	GROSS=$(echo "$LINE" | cut -d ',' -f7 | sed 's/\"//g')
- 
+ 	XDA=$(echo "$LINE" | cut -d ',' -f15 | cut -d '(' -f1 | sed 's/Donation from//g' | sed 's/\"//g' | sed 's/a guest on XDA Developers//g' | sed 's/Developers//g')
+	if [[ $( echo $XDA | grep -c XDA) -eq 0 ]]; then
+	XDA=""
+	fi
 #	echo "$NAME $STATUS $GROSS"
 	if [[ "${NAMES[@]}" == *"$NAME"* ]]; then
 #		echo "duplicate detected"
@@ -46,6 +49,7 @@ do
 		fi
 		NAMES[$POS]=$NAME
 		GROSSES[$POS]=$GROSS
+		XDAS[$POS]=$XDA
 		POS=$[$POS + 1 ]
 	fi
 	
@@ -61,7 +65,7 @@ do
 	fi
 	if [[ $(echo "${GROSSES[$POS]} >= 2" | bc) -gt 0 ]]; then
 		NAMEVAR=$(echo  ${NAMES[$POS]} | awk '{print tolower($0)}' | sed 's/ /_/g')
-		echo "${GROSSES[$POS]},${NAMES[$POS]},$NAMEVAR"
+		echo "${GROSSES[$POS]},${NAMES[$POS]},$NAMEVAR,${XDAS[$POS]}"
 	fi
 	POS=$[$POS + 1 ]
 done
