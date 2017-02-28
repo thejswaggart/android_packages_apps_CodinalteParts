@@ -8,7 +8,7 @@
     <string name="otg_title">USB HOST</string>
     <string name="sim2_title">SIM 2</string>
     <string name="glove_title">TS: Glove Mode</string>
-    <string name="network_header">NETWORKING</string>
+    <string name="network_header">NETWORKING test</string>
     <string name="charger_header">OFFLINE CHARGER</string>
     <string name="workaround_header">WORKAROUNDS</string>
     <string name="google_enc_title">Use Google H264</string>
